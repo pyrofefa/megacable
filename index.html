@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html ng-app='angularRoutingApp'>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/slick.css">
+<link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+<link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+<script src="js/vendor/jquery.js" ></script>
+</head>
+<title>Megacable</title>
+<!--Iniciando el primer controlador inicioController-->
+<body ng-controller='inicioController'>
+	<!--Iniciando controlador para banner_view con ng-resource-->
+	<header style="width: 1080px; height: 512px;">
+	   <div class="row">
+        <div class="col-md-12">
+            <div id="carusel">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <div id="consumi" class="carousel-inner"></div>
+                </div> 
+            </div>  
+        </div>
+     </div>
+  </header>
+	<!--Fin del controlador banner_view-->
+	<div ng-view>
+	<!-- Aquí inyectamos las vistas-->	
+	</div>
+<footer style="width: 1080px; height: 208px;">
+	    <div class="row">
+        <div class="col-md-12">
+            <div id="carusel">
+                <div id="myCarouselfooter" class="carousel slide" data-ride="carousel">
+                    <div id="consumifooter" class="carousel-inner"></div>
+                </div> 
+            </div>  
+        </div>
+     </div>
+</footer>
+<script src="js/angular.min.js"></script>
+<script src="js/angular-route.min.js"></script>
+<script src="js/angular-resource.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/jquery.mobile.min.js"></script>
+<script src="js/banner_view.js"></script>
+<script src="js/banner_footer.js"></script>
+<script type="text/javascript">
+//bannerview
+$('#myCarousel').on('slid.bs.carousel', function () 
+{
+  //console.log('slide');
+  var c = $('li.item.video').hasClass("active");//buscando items que son videos
+  //console.log(c);
+
+  var id = $('li.item.video.active').children("video").attr("id");//trayendo el id del video k esta en la clase activo
+
+  console.log(id);
+  
+  if (c==true){
+      $("#myCarousel").carousel('pause');//pausando carusel
+      document.getElementById(id).play();//reporduciendo video
+      //console.log("el video: "+id+" ha empezado!!!");                        
+  }
+  if (c==false){
+    //console.log('imagen');//si es imagen abrir contador de 45 segundos y al terminar dar vuelta al carusel 
+    $("#myCarousel").carousel('pause');//pausando carusel
+    window.setTimeout(function(){
+    $("#myCarousel").carousel('next');
+      },15000);
+  }
+
+});
+
+//bannerfooter
+$('#myCarouselfooter').on('slid.bs.carousel', function () 
+{
+  //console.log('slide');
+  var cf = $('li.item.videof').hasClass("active");//buscando items que son videos
+  //console.log(cf);
+
+  var idf = $('li.item.videof.active').children("video").attr("id");//trayendo el id del video k esta en la clase activo
+
+  console.log(idf);
+  
+  if (cf==true){
+      $("#myCarouselfooter").carousel('pause');//pausando carusel
+      document.getElementById(idf).play();//reporduciendo video
+      //console.log("el video: "+idf+" ha empezado!!!");                        
+  }
+  if (cf==false){
+    console.log('imagen');//si es imagen abrir contador de 45 segundos y al terminar dar vuelta al carusel 
+    $("#myCarouselfooter").carousel('pause');//pausando carusel
+    window.setTimeout(function(){
+    $("#myCarouselfooter").carousel('next');
+      },15000);
+  }
+
+});
+</script>
+</body>
+</html>

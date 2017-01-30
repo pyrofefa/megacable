@@ -1,0 +1,90 @@
+header
+{
+    width: 1080px;
+    height: 512px;
+}
+footer{
+    /*background-image: url(../images/banner_estatico.jpg);*/
+    width: 1080px;
+    height: 208px;
+}
+#contenido{
+    background: url('images/fondo.jpg');
+    width: 1080px;
+    height: 1200px;
+}
+
+#grid {
+    /*position: relative;*/
+    border: solid 1px #000;
+    margin-top: 100px;
+    margin-left: auto;  
+    margin-right: auto; 
+
+}
+#grid div {
+    position: absolute;
+    
+
+}
+#grid div.selected {
+    border: 2px solid #FFFFFF;
+}
+#grid div.red {
+    background: #EE0000;
+}
+#grid div.green {
+    background: green;
+}
+#grid div.blue {
+    background: blue;
+}
+#grid div.yellow {
+    background: yellow;
+}
+#grid div.rosa {
+    background: #c61954;
+}
+#grid div.orange {
+    background: #FF9900;
+}
+.imgInicio{
+    background: url('../imagenStart.png');
+    width: 1080px;
+    height: 1080px;
+    margin: 50px auto;
+    padding: 5px;
+}
+.cuerpo{
+    background: #000000;
+}
+#points{
+    color: white;
+    text-align: center;
+    font-size: 50px;
+}
+#m_timer{
+    color:#fff;
+    font-size: 60px;
+     
+
+}
+.botonFin{
+    position: absolute;
+    background: url("../reiniciar.png");
+    margin-top: -950px;
+    margin-left: 30px;
+    width: 950px;
+    height: 950px;
+    z-index: 1;
+
+}
+.label{
+    color: #fff;
+    font-size: 50px;
+}
+.linea{
+    display: inline-block;
+    
+}
+

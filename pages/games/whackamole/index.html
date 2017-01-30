@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html lang="en" ng-app='app'>
+<head>
+	<meta charset="UTF-8">
+	<title>Whack-A-Mole</title>
+	<link rel="stylesheet" type="text/css" href="style.css" media="all" />
+	<!--Scripts y estilos que copie-->
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/angular.min.js"></script>
+    <script type="text/javascript" src="../js/angular-resource.min.js"></script>
+    <script type="text/javascript" src="../js/app.js"></script>
+</head>
+<body>
+<header  ng-controller="ruta">
+	<div id="carusel" class="carousel slide" data-ride="carousel" data-interval="10000" style="width:1080px; height:512px;">
+   		<div class="carousel-inner">
+        <!--Creando el bucle (ponerle el ng-class pra saber cual sera el primer dato active de bootstrap)-->
+        	<div class="item" ng-class="{active:!$index}" ng-repeat="data in datos">
+            <!--Trayendo imagenes concatenando el json y poniendo su extension-->
+            	<img src="http://localhost/api_imagenes/banner_view/{{ data.ruta }}">
+            </div>
+        </div>
+    </div>
+</header>
+
+<div id="contenido">
+	<!--Botones de volver e inicio-->
+	<div class="container">
+        <div class="row">
+            <div class="col-md-4" style="width:100px; height:171px;"><br><br>
+                <h2><a href="http://localhost/megacable/system/index.html"><img src="images/inicio.png"></a></h2>
+            </div> 
+            <div class="col-md-4" align="middle" style="width:770px; height:171px;">
+                <h2><img src="images/juegosbanner.png" height="151px"></h2>
+            </div>
+            <div class="col-md-4" style="width:100px; height:171px;"><br><br>
+                <h2><a href="javascript:history.back()"><img src="images/volver.png"></a></h2>
+            </div>
+        </div>
+    </div>
+	<!--juego-->
+	<div class="container">	
+		<div class="row">
+			<div class="col-md-12">
+				<div class="wrapper" onclick="divo()" style="width:800px; height:600px;">
+					<div id="cielo" hidden></div>
+					<div id="wam-game"></div>
+				</div>
+			</div>	
+		</div>	
+	</div>	
+	<!--fin juego-->
+</div>
+<!---->
+<footer ng-controller="ruta_footer">
+    <div id="carusel" class="carousel slide" data-ride="carousel" data-interval="10000" style="width:1080px; height:208px;">
+       <div class="carousel-inner">
+            <!--Creando el bucle (ponerle el ng-class pra saber cual sera el primer dato active de bootstrap)-->
+           <div class="item" ng-class="{active:!$index}" ng-repeat="data in datos">
+                <!--Trayendo imagenes concatenando el json y poniendo su extension-->
+                <img src="http://localhost/api_imagenes/banner_footer/{{ data.ruta }}">
+            </div>
+        </div>
+    </div>    
+</footer>
+<script type="text/javascript" src="whackamole.js"></script>
+<script type="text/javascript">
+	window.onload = function() {
+		whackamole.setup("wam-game");
+	}
+</script>
+</body>
+</html>

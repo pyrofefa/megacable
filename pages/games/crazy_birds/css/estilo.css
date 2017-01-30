@@ -1,0 +1,64 @@
+header
+{
+    width: 1080px;
+    height: 512px;
+}
+footer{
+    /*background-image: url('../images/banner_estatico.jpg');*/
+    width: 1080px;
+    height: 208px;
+}
+#contenido{
+    background: url('../assets/images/fondo.jpg');
+    width: 1080px;
+    height: 1200px;
+}
+
+.botonloser{
+    background:url('../assets/images/perdedor.png');
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 500px;
+    height: 400px;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+/*.textoPerdedor{
+    color: #ffffff;
+}*/
+.botonganador{
+    background:url('../assets/images/ganador.png');
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 500px;
+    height: 400px;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+.textoGanador{
+
+}
+.pantallaInicio {
+
+    background: url('../assets/images/inicio.png');
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 1080px;
+    height: 1080px;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+.imagenInicio{
+    padding: 5px;
+    background: url('../assets/images/inicio.png');
+    width: 1080px;
+    height: 1080px;
+    margin: 50px auto;
+}
+.juegoDisplay{
+    /*background-color: #424242;*/
+}
+

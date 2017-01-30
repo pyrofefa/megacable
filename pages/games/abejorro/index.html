@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+<head>
+	<title>Flappy SNTE</title>
+	<!--Scripts y estilos del juego-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<script type="text/javascript" src="lib/impact/impact.js"></script>
+	<script type="text/javascript" src="lib/game/main.js"></script>
+	<!--Scripts y estilos que copie-->
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<script type="text/javascript" src="../js/jquery.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/angular.min.js"></script>
+	<script type="text/javascript" src="../js/angular-resource.min.js"></script>
+	<script type="text/javascript" src="../js/app.js"></script>
+
+</head>
+<body>
+	<!--Banner view-->
+	<header style="width:1080px; height:512px;"  ng-controller="ruta">
+
+	<div id="carusel" class="carousel slide" data-ride="carousel" data-interval="10000" style="width:1080px; height:512px;">
+       <div class="carousel-inner">
+       		<!--Creando el bucle (ponerle el ng-class pra saber cual sera el primer dato active de bootstrap)-->
+           <div class="item" ng-class="{active:!$index}" ng-repeat="data in datos">
+                <!--Trayendo imagenes concatenando el json y poniendo su extension-->
+                <img src="http://localhost/api_imagenes/banner_view/{{ data.ruta }}">
+            </div>
+        </div>
+    </div>
+
+	</header>
+		<div style="background: url('images/fondo.jpg'); width:1080px; height:1200px;">
+		<!--Botones de volver e inicio-->
+		 <div class="container">
+                <div class="row">
+                    <div class="col-md-4" style="width:100px;"><br><br>
+                        <h2><a href="http://localhost/megacable/system/index.html"><img src="images/inicio.png"></a></h2>
+                    </div> 
+                    <div class="col-md-4" align="middle" style="width:770px;">
+                        <h2><img src="images/juegosbanner.png"></h2>
+                    </div>
+                    <div class="col-md-4" style="width:100px;"><br><br>
+                        <h2><a href="javascript:history.back()"><img src="images/volver.png"></a></h2>
+                    </div>
+                </div>
+            </div>
+    <!--Juego-->    
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<div >
+					<canvas  id="game1"></canvas>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<!--Fin del juego-->
+	<!--Banner estatico-->
+	<footer ng-controller="ruta_footer" style="width:1080px; height:208px;">
+	<div id="carusel" class="carousel slide" data-ride="carousel" data-interval="10000" style="width:1080px; height:208px;">
+       <div class="carousel-inner">
+       		<!--Creando el bucle (ponerle el ng-class pra saber cual sera el primer dato active de bootstrap)-->
+           <div class="item" ng-class="{active:!$index}" ng-repeat="data in datos">
+                <!--Trayendo imagenes concatenando el json y poniendo su extension-->
+                <img src="http://localhost/api_imagenes/banner_footer/{{ data.ruta }}">
+            </div>
+        </div>
+    </div>    
+    </footer>
+</body>
+</html>
+

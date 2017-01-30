@@ -1,0 +1,175 @@
+header{
+	width: 1080px;
+	height: 512px;
+}
+footer{
+	/*background-image: url(../img/banner_estatico.jpg);*/
+	width: 1080px;
+	height: 208px;
+}
+h1{
+	color:#FFF;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+}
+h2{
+	color: #FFF;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+}
+h3{
+	color: #FFF;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+}
+h4{
+	color: #FFF;
+	font-family: 'Roboto', sans-serif;
+
+}
+a{
+	color:#FFF;
+	font-family: 'Roboto', sans-serif;
+}
+p{
+	color:#FFF;	
+	font-family: 'Roboto', sans-serif;
+}
+hr{
+	border-color: #0080FF;
+}
+#contenido{
+	background-image: url(../img/fondo.jpg);
+	background-repeat: no-repeat;
+	width: 1080px;
+	height: 1200px;
+}
+#fondo_principal{
+	background-image: url(../img/fondo_principal.jpg);
+	background-repeat: no-repeat;
+	width: 1080px;
+	height: 1200px;	
+}
+#television_cable{
+	background-image: url(../img/television_cable.png);
+	background-repeat: no-repeat;
+	width: 885;
+	height: 285px;
+}
+#logo{
+	background-image: url(../img/logo.png);
+	background-repeat: no-repeat;
+	width: 985px;
+	height: 100px;
+}
+#borde_arriba{
+	border-top: #0080FF solid 1px;
+	width: 1080px;
+	
+}
+#borde_derecha{
+	border-right: #0080FF solid 1px; 
+	height: 215px;
+
+}
+#contenido_scroll {
+    position: relative;
+    width: 1040px;
+    height: 900px;
+    /*border: 1px solid black;*/
+    overflow: hidden;
+}
+#subir_bajar {
+   width: 1060px;
+   height: 900px;   
+   overflow-y: scroll; 
+   overflow-x: hidden;   
+}
+.flecha_izquierda
+{
+	background-image: url(../img/flecha_izquierda.png);
+	background-repeat: no-repeat;
+}
+.flecha_derecha
+{
+	background-image: url(../img/flecha_derecha.png);
+	background-repeat: no-repeat;
+}
+/*Megacable Play*/
+.flecha_izquierda_programas
+{
+	background-image: url(../img/flecha_izquierda.png);
+	background-repeat: no-repeat;
+}
+.flecha_derecha_programas
+{
+	background-image: url(../img/flecha_derecha.png);
+	background-repeat: no-repeat;
+}
+.flecha_izquierda_peliculas
+{
+	background-image: url(../img/flecha_izquierda.png);
+	background-repeat: no-repeat;
+}
+.flecha_derecha_peliculas
+{
+	background-image: url(../img/flecha_derecha.png);
+	background-repeat: no-repeat;
+}
+.flecha_izquierda_integracion
+{
+	background-image: url(../img/flecha_izquierda.png);
+	background-repeat: no-repeat;
+}
+.flecha_derecha_integracion
+{
+	background-image: url(../img/flecha_derecha.png);
+	background-repeat: no-repeat;
+}
+.nav
+{
+	background-image: url(../img/paquetesfondo.png);
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover{
+	/*background-image: url(../img/nav_active.png);*/
+	background-color: #190707  !important;
+	color:#fff;
+}
+/*#id_scroll{
+	overflow:scroll; 
+	overflow-x: hidden;
+	height:900px; 
+	width:1000px;
+}
+
+#telefonia{
+	background-image: url(../img/telefonia.png);
+	background-repeat: no-repeat;
+	height: 285px;
+}
+#internet{
+	background-image: url(../img/internet.png);
+	background-repeat: no-repeat;
+	height: 285px;
+}
+#paquetes{
+	background-image: url(../img/paquetes.png);
+	background-repeat: no-repeat;
+	height: 285px;
+}
+#promos{
+	background-image: url(../img/promos.png);
+	background-repeat: no-repeat;
+	height: 285px;
+}
+#juegos{
+	background-image: url(../img/juegos.png);
+	background-repeat: no-repeat;
+	height: 285px;
+
+}*/
+
+

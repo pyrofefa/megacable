@@ -1,0 +1,53 @@
+<div id="contenido">
+	<div class="container">
+      <div class="row">
+        <div class="col-md-4" style="width:100px;"><br><br>
+          <h2><a href="#/"><img src="img/inicio.png"></a></h2>
+        </div> 
+        <div class="col-md-4" align="middle" style="width:770px;">
+          <h2><img src="img/promobanner.png"></h2>
+        </div>
+        <div class="col-md-4" style="width:100px;"><br><br>
+          <h2><a href="javascript:history.back()"><img src="img/volver.png"></a></h2>
+        </div>
+      </div>
+  </div>
+  <hr>
+  <div class="container">
+  	<div class="row">
+  		<div class="col-md-2" style="padding-left:10%">
+        	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <span  data-target="#promos" data-slide="prev" style="width:32px; height: 52px;">
+            	<span><img src="img/flecha_izquierda.png"></span>
+            </span>
+        </div> 
+        <div class="col-md-8" ng-controller="ruta_promos">
+        	<div  id="promos" class="carousel slide" data-ride="carousel" data-interval="10000">
+       			<div class="carousel-inner">
+       				<div class="item" ng-class="{active:!$index}" ng-repeat="data in datos">
+                		<h1><strong>{{data.encabezado}}</strong></h1>
+                		<img src="http://localhost/api_imagenes/promos/{{ data.ruta }}">
+            		</div>
+        		</div>
+    		</div>
+        </div>
+       	<div class="col-md-2">
+        	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        	<span  data-target="#promos" data-slide="next" style="width:32px; height: 52px;">
+             	<span><img src="img/flecha_derecha.png"></span>
+            </span>
+        </div>
+  	</div>
+</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+  
+	$(".carousel").swiperight(function() {
+	    $(this).carousel('prev');
+	});
+	$(".carousel").swipeleft(function() {  
+	    $(this).carousel('next');
+	});
+}); /* END document ready */
+</script>

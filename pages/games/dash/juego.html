@@ -1,0 +1,81 @@
+<!DOCTYPE>
+<html ng-app='app'>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <title>Bejeweled</title>
+        <!--Scripts y estilos del juego-->
+        <script src="scripts/jquery.min.js"></script>
+        <script src="scripts/jquery-ui.custom.min.js"></script>
+        <script src="scripts/script.js"></script>
+        <script src="crono/jquery.countdownTimer.js"></script>
+        <link rel="stylesheet" href="styles/style.css">
+        <!--Scripts y estilos que copie-->
+        <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+        <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../js/angular.min.js"></script>
+        <script type="text/javascript" src="../js/angular-resource.min.js"></script>
+        <script type="text/javascript" src="../js/app.js"></script>
+
+    </head>
+    <body class="cuerpo">
+        <header  ng-controller="ruta">
+            <div id="carusel" class="carousel slide" data-ride="carousel" data-interval="10000" style="width:1080px; height:512px;">
+                <div class="carousel-inner">
+                <!--Creando el bucle (ponerle el ng-class pra saber cual sera el primer dato active de bootstrap)-->
+                    <div class="item" ng-class="{active:!$index}" ng-repeat="data in datos">
+                        <!--Trayendo imagenes concatenando el json y poniendo su extension-->
+                        <img src="http://localhost/api_imagenes/banner_view/{{ data.ruta }}">
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="contenido">
+         <div class="container" style="height:131px;">
+                <div class="row" style="height:131px;">
+                    <div class="col-md-4" style="width:100px; height:131px;"><br><br>
+                        <h2><a href="http://localhost/megacable/system/index.html"><img src="images/inicio.png"></a></h2>
+                    </div> 
+                    <div class="col-md-4" align="middle" style="width:770px; height:131px;">
+                        <h2><img src="images/juegosbanner.png"></h2>
+                    </div>
+                    <div class="col-md-4" style="width:100px; height:131px;"><br><br>
+                        <h2><a href="javascript:history.back()"><img src="images/volver.png"></a></h2>
+                    </div>
+                </div>
+            </div>
+
+        <br>
+        <div class="container">
+                <div class="linea" id="countdowntimer">
+                    <span id="m_timer"><span>
+                </div>
+                <span class="label linea">Puntos:</span>
+                <div class="linea" id="points"></div>
+        </div>
+                <div id="grid" style="position:relative; top: -100px; "></div>
+        </div>
+        
+        </div>   
+        <!--Footer--> 
+        <footer ng-controller="ruta_footer">
+        <div id="carusel" class="carousel slide" data-ride="carousel" data-interval="10000" style="width:1080px; height:208px;">
+            <div class="carousel-inner">
+                <!--Creando el bucle (ponerle el ng-class pra saber cual sera el primer dato active de bootstrap)-->
+                <div class="item" ng-class="{active:!$index}" ng-repeat="data in datos">
+                    <!--Trayendo imagenes concatenando el json y poniendo su extension-->
+                    <img src="http://localhost/api_imagenes/banner_footer/{{ data.ruta }}">
+                </div>
+            </div>
+        </div>    
+        </footer>
+        <script>
+        
+            $(function(){
+                Bejeweled = Bejeweled || {};
+                Bejeweled.init();
+            });
+        </script>
+
+    </body>
+</html>

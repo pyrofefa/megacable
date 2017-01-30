@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+	<head>
+	<script src="phaser.min.js"></script>
+    <script src = "game.js"></script>
+	<!--Scripts y estilos que copie-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/angular.min.js"></script>
+    <script type="text/javascript" src="../js/angular-resource.min.js"></script>
+    <script type="text/javascript" src="../js/app.js"></script>
+</head>
+<body>
+	<header  ng-controller="ruta" style="width:1080px; height:512px;">
+	<div id="carusel" class="carousel slide" data-ride="carousel" data-interval="10000" style="width:1080px; height:512px;">
+   		<div class="carousel-inner">
+        <!--Creando el bucle (ponerle el ng-class pra saber cual sera el primer dato active de bootstrap)-->
+        	<div class="item" ng-class="{active:!$index}" ng-repeat="data in datos">
+            <!--Trayendo imagenes concatenando el json y poniendo su extension-->
+            	<img src="http://localhost/api_imagenes/banner_view/{{ data.ruta }}">
+            </div>
+        </div>
+    </div>
+	</header>
+	<div style="width:1080px; height:1200px;" id="contenido" >
+		<!--Botones de volver e inicio-->
+		<div class="container">
+	        <div class="row">
+	            <div class="col-md-4" style="width:100px; height:171px;"><br><br>
+	                <h2><a href="http://localhost/megacable/system/index.html"><img src="images/inicio.png"></a></h2>
+	            </div> 
+	            <div class="col-md-4" align="middle" style="width:770px; height:171px;">
+	                <h2><img src="images/juegosbanner.png" height="151px"></h2>
+	            </div>
+	            <div class="col-md-4" style="width:100px; height:171px;"><br><br>
+	                <h2><a href="javascript:history.back()"><img src="images/volver.png"></a></h2>
+	            </div>
+	        </div>
+	    </div>
+		<!--juego-->
+		<div id="juego" align="middle"></div>
+	</div>
+	<footer ng-controller="ruta_footer" style="width:1080px; height:208px;">
+    <div id="carusel" class="carousel slide" data-ride="carousel" data-interval="10000" style="width:1080px; height:208px;">
+       <div class="carousel-inner">
+            <!--Creando el bucle (ponerle el ng-class pra saber cual sera el primer dato active de bootstrap)-->
+           <div class="item" ng-class="{active:!$index}" ng-repeat="data in datos">
+                <!--Trayendo imagenes concatenando el json y poniendo su extension-->
+                <img src="http://localhost/api_imagenes/banner_footer/{{ data.ruta }}">
+            </div>
+        </div>
+    </div>    
+	</footer>	
+</body>
+</html>

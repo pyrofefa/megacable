@@ -1,0 +1,116 @@
+body {
+	font-family: Helvetica, Arial, sans-serif;
+}
+h1 {
+	font-size: 24px;
+	font-weight: bold;
+	border-bottom: 3px solid #b7b7b7;
+}
+
+p {
+	font-size: 11px;
+}
+header
+{
+    width: 1080px;
+    height: 512px;
+}
+footer{
+    /*background-image: url(images/banner_estatico.jpg);*/
+    width: 1080px;
+    height: 208px;
+}
+#contenido{
+	background: url('images/fondo.jpg');
+	/*background-color: #190707;*/
+    width: 1080px;
+    height: 1200px;
+}
+.wrapper {
+	/*padding: 5px;*/
+	background: url('images/startScreen.png');
+	width: 1000px;
+	height: 1080px;
+	padding-right: -100px;
+	/*margin: 50px auto;*/
+}
+#cielo{
+	width: 950px;
+	height: 180px;
+	border: none;
+	background: url('newImages/fondoarriba1.png');
+	padding-right: -100px;
+
+}
+#wam-game {
+
+	background: url('newImages/fondofon1.png');
+	width: 950px;
+	height: 850px;
+	display: block;
+	padding-right: 100px;
+	
+	/*position: relative;*/
+	/*margin: 0 auto;*/
+	/*border: 0px solid #3b5a1d;*/
+
+}
+.wam-pesky-mole,
+.wam-pesky-mole-dead {
+	width: 300px;
+	height: 300px;
+	background: url('images/mole4.png') no-repeat;
+	position: absolute;
+	display: block;
+	cursor: pointer;
+	z-index: 10;
+}
+
+.wam-pesky-mole-dead {
+	background: url('images/molemuerto.png') no-repeat;
+	width: 300px;
+	height: 300px;
+}
+
+.wam-scoreboard {
+	width: 200px;
+	line-height: 28px;
+	position: absolute;
+	top: 10px;
+	left: 0;
+	background: #3b5a1d;
+	font-size: 13px;
+	letter-spacing: 1px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #fff;
+	font-family: arial;
+}
+.wam-startScreen {
+	position: absolute;
+	/*top: 100px;
+	left: 100px;*/
+	height: 400px;
+	width: 759px;
+	margin-left:100px; margin-right:auto;
+	margin-top: 300px;
+	background: url('images/comenzar.png');
+	background-repeat:  no-repeat;
+	text-indent: -9999px;
+	cursor: pointer;
+	z-index: 20;
+}
+.wam-endScreen {
+
+	position: absolute;
+	/*top: 100px;
+	left: 100px;*/
+	height: 200px;
+	width: 500px;
+	margin-left:300px; margin-right:auto;
+	margin-top: 300px;
+	background: url('images/endScreen.png');
+	text-indent: -9999px;
+	cursor: pointer;
+	z-index: 20;
+}

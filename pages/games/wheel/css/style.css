@@ -1,0 +1,28 @@
+#contenido
+{
+	/*background: url('../images/fondo.jpg');	
+	background-repeat: no-repeat;*/
+	background-color: #58ACFA;
+}
+.botonganador{
+    background:url('../ganador.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 50%;
+    top: 85%;
+    width: 600px;
+    height: 100px;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+.botonperdedor{
+    background:url('../perdedor.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 50%;
+    top: 85%;
+    width: 600px;
+    height: 100px;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
