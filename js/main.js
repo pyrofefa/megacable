@@ -71,10 +71,6 @@ angularRoutingApp.config(function($routeProvider) {
             templateUrl : 'pages/que_es_tvdgital.html',
             controller  : 'que_es_tvdgitalController'
         })
-        .when('/television/television_cable/basico_digital', {
-            templateUrl : 'pages/basico_digital.html',
-            controller  : ' basico_digitalController'
-        })
         /*Parte Juegos*/
         .when('/juegos/memoria', {
             templateUrl : 'pages/games/memoria/juego.html',
@@ -121,9 +117,17 @@ angularRoutingApp.controller('juegosController', function($scope) {
 });
 angularRoutingApp.controller('internetController', function($scope) {
 });
-angularRoutingApp.controller('paquetesController', function($scope) {
-});
-angularRoutingApp.controller('juegosController', function($scope) {
+angularRoutingApp.controller('paquetesController', function($scope, $http) 
+{
+    $http({
+        method:"get",
+        url: "http://localhost/api_megacable/paquete_uno"
+        }).success(function(data){
+            console.log(data);
+            $scope.datos=data;
+        }).error(function(data){
+            alert("Ha ocurrido un error al mostrar los datos");
+    });
 });
 angularRoutingApp.controller('promosController', function($scope) {
 });
@@ -133,9 +137,18 @@ angularRoutingApp.controller('megacable_playController', function($scope) {
 });
 angularRoutingApp.controller('megacable_hdController', function($scope) {
 });
-angularRoutingApp.controller('television_cableController', function($scope) {
-});
-angularRoutingApp.controller('basico_digitalController', function($scope) {
+angularRoutingApp.controller('television_cableController', function($scope, $http) 
+{
+    $http({
+        method:"get",
+        url: "http://localhost/api_megacable/cable"
+        }).success(function(data){
+            console.log(data);
+            $scope.datos=data;
+        }).error(function(data){
+            alert("Ha ocurrido un error al mostrar los datos");
+    });
+
 });
 angularRoutingApp.controller('dvrController', function($scope) {
 });
@@ -174,83 +187,15 @@ angularRoutingApp.controller('ruletaController', function($scope) {
 /*angularRoutingApp.controller('crazy_birdsController', function($scope) {
 });*/
 /*Consumiendo Json*/
-/*Banner View*/
-angularRoutingApp.controller("ruta", function ($scope, $http, dataResource) {
-    //hacemos uso de $http para obtener los datos del json
-    $http.get('http://localhost/api_megacable/listaimagenes').success(function (data) {
-        //Convert data to array.
-        //datos lo tenemos disponible en la vista gracias a $scope
-        $scope.datos = data;
-    });
-    //datosResource lo tenemos disponible en la vista gracias a $scope
-    $scope.datosResource = dataResource.get();
-})
-//de esta forma tan sencilla consumimos con $resource en AngularJS
-angularRoutingApp.factory("dataResource", function ($resource) {
-    return $resource("http://localhost/api_megacable/listaimagenes", //la url donde queremos consumir
-        {}, //aquí podemos pasar variables que queramos pasar a la consulta
-        //a la función get le decimos el método, y, si es un array lo que devuelve
-        //ponemos isArray en true
-        { get: { method: "GET", isArray: true }
-    })
-});
-/*Banner Footer*/
-angularRoutingApp.controller("ruta_footer", function ($scope, $http, dataResource) {
-    //hacemos uso de $http para obtener los datos del json
-    $http.get('http://localhost/api_megacable/listaimagenesfooter').success(function (data) {
-        //Convert data to array.
-        //datos lo tenemos disponible en la vista gracias a $scope
-        $scope.datos = data;
-    });
-    //datosResource lo tenemos disponible en la vista gracias a $scope
-    $scope.datosResource = dataResource.get();
-})
-//de esta forma tan sencilla consumimos con $resource en AngularJS
-angularRoutingApp.factory("dataResource", function ($resource) {
-    return $resource("http://192.168.100.49/api_megacable/listaimagenesfooter", //la url donde queremos consumir
-        {}, //aquí podemos pasar variables que queramos pasar a la consulta
-        //a la función get le decimos el método, y, si es un array lo que devuelve
-        //ponemos isArray en true
-        { get: { method: "GET", isArray: true }
-    })
-});
-/*networks*/
-angularRoutingApp.controller("ruta_networks", function ($scope, $http, dataResource) {
-    $http.get('http://192.168.100.49/api_megacable/networks').success(function (data) {
-      $scope.datos = data;
-    });
-    $scope.datosResource = dataResource.get();
-})
-angularRoutingApp.factory("dataResource", function ($resource) {
-    return $resource("http://192.168.100.49/api_megacable/networks", //la url donde queremos consumir
-        {},
-        { get: { method: "GET", isArray: true }
-    })
-});
-
-/*programas tv*/
-angularRoutingApp.controller("ruta_programas", function ($scope, $http, dataResource) {
-    $http.get('http://192.168.100.49/api_megacable/programas_tv').success(function (data) {
-      $scope.datos = data;
-    });
-    $scope.datosResource = dataResource.get();
-})
-angularRoutingApp.factory("dataResource", function ($resource) {
-    return $resource("http://192.168.100.49/api_megacable/programas_tv", //la url donde queremos consumir
-        {},
-        { get: { method: "GET", isArray: true }
-    })
-});
 /*Promociones*/
-angularRoutingApp.controller("ruta_promos", function ($scope, $http, dataResource) {
-    $http.get('http://192.168.100.49/api_megacable/promociones').success(function (data) {
-      $scope.datos = data;
+angularRoutingApp.controller("ruta_promos", function ($scope, $http) {
+    $http({
+        method:"get",
+        url: "http://localhost/api_megacable/promociones"
+        }).success(function(data){
+            console.log(data);
+            $scope.datos=data;
+        }).error(function(data){
+            alert("Ha ocurrido un error al mostrar los datos");
     });
-    $scope.datosResource = dataResource.get();
 })
-angularRoutingApp.factory("dataResource", function ($resource) {
-    return $resource("http://192.168.100.49/api_megacable/promociones", //la url donde queremos consumir
-        {},
-        { get: { method: "GET", isArray: true }
-    })
-});

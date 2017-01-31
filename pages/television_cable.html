@@ -23,12 +23,24 @@
 		</div>
 	</div>
 	<br><br><br><br>
-	<div class="container">
+	<div class="container" ng-controller="television_cableController">
 		<div class="row">
-			<div class="col-md-3"><img src="img/basicodigital.png" width="230px" height="471px"></div>
-			<div class="col-md-3"><img src="img/superdigital.png" width="230px" height="471px"></div>
-			<div class="col-md-3"><img src="img/basicoplusdigital.png" width="230px" height="471px"></div>
-			<div class="col-md-3"><img src="img/paquetetotal.png" width="230px" height="471px"></div>
+			<div class="col-md-3" ng-repeat="data in datos">
+				<div style="width: 230px; height: 581px; background-color: #000;">
+					<div style="width: 230px; height: 115px; background-color: #0066B3;">
+						<br>
+						<h2 style="text-align: center;">{{data.nombre}}</h2>
+					</div>
+					<br>
+					<p style="text-align: center;"><img src="img/tv.png"></p>
+					<h1 style="text-align: center; font-size: 60pt;">{{data.numero_canales}}</h1>
+					<h2 style="text-align: center;">CANALES DE TV</h2>
+					<h5 style="text-align: center;">Y {{data.numero_musica}} CANALES DE MUSICA</h5>
+					<br>
+					<h4 style="text-align: center;">¡Lo que todos quieren ver!</h4>
+				</div>	
+				<!--<img src="img/basicodigital.png" width="230px" height="471px">-->
+			</div>
 		</div>
 	</div>
 </div>	

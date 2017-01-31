@@ -59,7 +59,7 @@ $('#myCarousel').on('slid.bs.carousel', function ()
 
   var id = $('li.item.video.active').children("video").attr("id");//trayendo el id del video k esta en la clase activo
 
-  console.log(id);
+  //console.log(id);
   
   if (c==true){
       $("#myCarousel").carousel('pause');//pausando carusel
@@ -85,7 +85,7 @@ $('#myCarouselfooter').on('slid.bs.carousel', function ()
 
   var idf = $('li.item.videof.active').children("video").attr("id");//trayendo el id del video k esta en la clase activo
 
-  console.log(idf);
+  //console.log(idf);
   
   if (cf==true){
       $("#myCarouselfooter").carousel('pause');//pausando carusel
@@ -93,7 +93,7 @@ $('#myCarouselfooter').on('slid.bs.carousel', function ()
       //console.log("el video: "+idf+" ha empezado!!!");                        
   }
   if (cf==false){
-    console.log('imagen');//si es imagen abrir contador de 45 segundos y al terminar dar vuelta al carusel 
+    //console.log('imagen');//si es imagen abrir contador de 45 segundos y al terminar dar vuelta al carusel 
     $("#myCarouselfooter").carousel('pause');//pausando carusel
     window.setTimeout(function(){
     $("#myCarouselfooter").carousel('next');

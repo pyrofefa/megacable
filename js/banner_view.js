@@ -8,7 +8,7 @@ $(document).ready(function()
         type: "GET",
         contentType: "application/json; charset=utf-8",
             success: function (data) {
-                console.log(data);
+                //console.log(data);
                 $.each(data, function(index, data)
                 {
                 	$("#myCarousel .carousel-inner .item:first").addClass("active");
@@ -24,7 +24,7 @@ $(document).ready(function()
                 		$("#consumi").append("<li class='item imagen'> <img src='http://localhost/api_megacable/bannerview/"+data.ruta+"' height='200px'> </li>");
 					}
 				    $("#mi-video"+data.id).on('ended', function(e){
-        				console.log('El video: mi-video'+data.id+' ha finalizado!!!');
+        				//console.log('El video: mi-video'+data.id+' ha finalizado!!!');
         				$("#myCarousel").carousel('next');//slide de carusel cuando un video halla terminado
     				});
 

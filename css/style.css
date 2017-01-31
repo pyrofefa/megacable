@@ -28,6 +28,10 @@ h4{
 	font-family: 'Roboto', sans-serif;
 
 }
+h5{
+	color: #FFF;
+	font-family: 'Roboto', sans-serif;	
+}
 a{
 	color:#FFF;
 	font-family: 'Roboto', sans-serif;
@@ -38,6 +42,11 @@ p{
 }
 hr{
 	border-color: #0080FF;
+}
+body{
+	background-image: url(../img/fondo.jpg);
+	background-repeat: no-repeat;
+	overflow-x: hidden;
 }
 #contenido{
 	background-image: url(../img/fondo.jpg);

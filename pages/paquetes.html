@@ -304,39 +304,44 @@
                       </div>
                       <div class="container" id="borde_arriba" style="width:1050px;"></div>
                   </div>
-                  <div class="tab-pane fane" id="uno">
+                  <div class="tab-pane fane" id="uno" ng-controller="paquetesController">
                        <div class="container" style="width:1050px;">
                           <div class="row">
-                              <div class="col-md-6" id="borde_derecha" style="height:250px; width:530px;">
-                                  <h1>TELEVISI&Oacute;N</h1>
+                            <div class="col-md-6">
+                                <h1>TELEVISI&Oacute;N</h1>
+                                <div ng-repeat="data in datos" id="borde_derecha" style="height:250px; width:530px;">      
+                                    <br>
+                                    <h1>{{data.nombre}}</h1>
+                                    <h1><strong>{{data.numero_canales}} Canales + {{data.numero_musica}} Canales de Audio</strong></h1>
+                                </div>
+                            </div>
+                            <div class="col-md-6"  style="width:500px;">
+                                <h1>PRECIO</h1>
+                                <div ng-repeat="data in datos">
+                                        <br>
+                                        <h1><strong> $ {{data.precio}} Pronto Pago</strong></h1>
+                                        <h1>$ {{data.precio_pronto}} Pago normal</h1><br><br><br><br><br>
+                                </div>
+                            </div>
+                            <!--<div class="col-md-6" id="borde_derecha" style="height:250px; width:530px;">
+                                  
+                              <div ng-repeat="data in datos">      
                                   <br>
-                                  <h1>BASICO PLUS DIGITAL</h1>
-                                  <h1><strong>128 Canales + 50 Canales de Audio</strong></h1>
+                                  <h1>{{data.nombre}}</h1>
+                                  <h1><strong>{{data.numero_canales}} Canales + {{data.numero_musica}} Canales de Audio</strong></h1>
                               </div>
-                              <div class="col-md-6" style="width:500px;">
-                                  <img src="img/triangulo.png" align="right">
-                                  <h1>PRECIO</h1>
-                                  <br>
-                                  <h1><strong> $ 359 Pronto Pago</strong></h1>
-                                  <h1>$ 389 Pago normal</h1>
+                              <div ng-repeat="data in datos">
+                                <div class="col-md-6" style="width:500px;">
+                                    <h1>PRECIO</h1>
+                                    <br>
+                                    <h1><strong> $ {{data.precio}} Pronto Pago</strong></h1>
+                                    <h1>$ {{data.precio_pronto}} Pago normal</h1>
+                                </div>
                               </div>
-                          </div>
+                            </div>
+                          </div>-->
                       </div>
-                      <div class="container" id="borde_arriba" style="width:1050px;">
-                          <div class="row">
-                              <div class="col-md-6" id="borde_derecha" style="height:250px; width:530px;">
-                                  <br>
-                                  <h1>BÁSICO DIGITAL</h1>
-                                  <h1><strong>105 Canales + 50 Canales de Audio</strong></h1>
-                              </div>
-                              <div class="col-md-6" style="width:500px;">
-                                  <br><br>
-                                  <h1><strong> $ 299 Pronto Pago</strong></h1>
-                                  <h1>$ 329 Pago normal</h1>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="container" id="borde_arriba" style="width:1050px;"></div>
+                     <div class="container" id="borde_arriba" style="width:1050px;"></div>
                   </div>
               </div>
 				  </div>
