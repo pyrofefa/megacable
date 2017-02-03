@@ -82,6 +82,11 @@ body{
 	height: 215px;
 
 }
+#borde_derecha_paquetes{
+	border-right: #FFF solid 1px; 
+	height: 215px;
+
+}
 #contenido_scroll {
     position: relative;
     width: 1040px;
@@ -89,7 +94,33 @@ body{
     /*border: 1px solid black;*/
     overflow: hidden;
 }
+#contenido_scroll_doble {
+    position: relative;
+    width: 1040px;
+    height: 900px;
+    /*border: 1px solid black;*/
+    overflow: hidden;
+}
+#contenido_scroll_uno {
+    position: relative;
+    width: 1040px;
+    height: 900px;
+    /*border: 1px solid black;*/
+    overflow: hidden;
+}
 #subir_bajar {
+   width: 1060px;
+   height: 900px;   
+   overflow-y: scroll; 
+   overflow-x: hidden;   
+}
+#subir_bajar_doble {
+   width: 1060px;
+   height: 900px;   
+   overflow-y: scroll; 
+   overflow-x: hidden;   
+}
+#subir_bajar_uno {
    width: 1060px;
    height: 900px;   
    overflow-y: scroll; 

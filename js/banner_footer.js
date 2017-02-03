@@ -15,13 +15,13 @@ $(document).ready(function()
 					if (data.tipo=="video") 
                 	{
                 		//$("#consumi").append("<li class='item video'> <video id='mi-video"+data.id+"'controls> <source src='http://agua.dev/comercial/"+data.ruta+"'> </video> </li>");
-                		$("#consumifooter").append("<li class='item videof'> <video id='mi-videof"+data.id+"' > <source src='http://localhost/api_megacable/bannerfooter/"+data.ruta+"'> </video> </li>");
+                		$("#consumifooter").append("<li class='item videof'> <video id='mi-videof"+data.id+"' > <source src='http://localhost/api_megacable/imagenes/banner_footer/"+data.ruta+"'> </video> </li>");
                 		//$("#myCarousel").carousel('pause');
                 	}
                 	else if(data.tipo=="imagen")
                 	{
                 		//$("#consumi").append("<li class='item imagen'> <img src='http://agua.dev/comercial/"+data.ruta+"'> </li>");
-                		$("#consumifooter").append("<li class='item imagenf'> <img src='http://localhost/api_megacable/bannerfooter/"+data.ruta+"' height='200px'> </li>");
+                		$("#consumifooter").append("<li class='item imagenf'> <img src='http://localhost/api_megacable/imagenes/banner_footer/"+data.ruta+"' height='200px'> </li>");
 					}
 				    $("#mi-videof"+data.id).on('ended', function(e){
         				//console.log('El video: mi-videof'+data.id+' ha finalizado!!!');

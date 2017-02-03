@@ -16,7 +16,7 @@ $( document ).ready(function() {
             success: function (data) {
                 console.log(data);
                 $.each(data, function(index, data){
-                    $("#consumi").append("<div class='col-md-3'><img src='http://localhost/api_imagenes/hbo_max/"+data.ruta+"'></div>");
+                    $("#consumih").append("<div class='col-md-3'><img src='http://localhost/api_megacable/imagenes/hbo_max/"+data.ruta+"'></div>");
                 })
             },
             error: function (response) {
@@ -38,7 +38,7 @@ $( document ).ready(function() {
             success: function (data) {
                 console.log(data);
                 $.each(data, function(index, data){
-                    $("#consumi2").append("<div class='col-md-3'><img src='http://localhost/api_imagenes/hbo_max/"+data.ruta+"'></div>");
+                    $("#consumih2").append("<div class='col-md-3'><img src='http://localhost/api_megacable/imagenes/hbo_max/"+data.ruta+"'></div>");
                 })
             },
             error: function (response) {

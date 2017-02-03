@@ -79,6 +79,10 @@ angularRoutingApp.config(function($routeProvider) {
         .when('/juegos/ruleta', {
             templateUrl : 'pages/games/wheel/index.html',
             controller  : 'ruletaController'
+        })
+         .when('/juegos/crazy_birds', {
+            templateUrl : 'pages/games/crazy_birds/juego.html',
+            controller  : 'crazy_birdsController'
         })        
         /*Parte de telefonia*/
         .when('/telefonia/planes', {
@@ -117,7 +121,10 @@ angularRoutingApp.controller('juegosController', function($scope) {
 });
 angularRoutingApp.controller('internetController', function($scope) {
 });
-angularRoutingApp.controller('paquetesController', function($scope, $http) 
+angularRoutingApp.controller('paquetesController', function($scope) 
+{
+});
+angularRoutingApp.controller('paqueteunoController', function($scope, $http) 
 {
     $http({
         method:"get",
@@ -125,6 +132,45 @@ angularRoutingApp.controller('paquetesController', function($scope, $http)
         }).success(function(data){
             console.log(data);
             $scope.datos=data;
+        }).error(function(data){
+            alert("Ha ocurrido un error al mostrar los datos");
+    });
+});
+angularRoutingApp.controller('paquetedosinternetController', function($scope, $http) 
+{
+    $http({
+        method:"get",
+        url: "http://localhost/api_megacable/paquete_dos_internet"
+        }).success(function(data){
+            console.log(data);
+            $scope.datos=data;
+        }).error(function(data){
+            alert("Ha ocurrido un error al mostrar los datos");
+    });
+});
+angularRoutingApp.controller('paquetedostelefoniatController', function($scope, $http) 
+{
+    $http({
+        method:"get",
+        url: "http://localhost/api_megacable/paquete_dos_telefonia"
+        }).success(function(data){
+            console.log(data);
+            $scope.datos=data;
+        }).error(function(data){
+            alert("Ha ocurrido un error al mostrar los datos");
+    });
+});
+angularRoutingApp.controller('paquetetresController', function($scope, $http) 
+{
+    $http({
+        method:"get",
+        url: "http://localhost/api_megacable/paquete_tres"
+        }).success(function(data){
+            console.log(data);
+            $scope.datos=data;
+            var television = data.numero_canales;
+            console.log(television);
+
         }).error(function(data){
             alert("Ha ocurrido un error al mostrar los datos");
     });
@@ -141,7 +187,7 @@ angularRoutingApp.controller('television_cableController', function($scope, $htt
 {
     $http({
         method:"get",
-        url: "http://localhost/api_megacable/cable"
+        url: "http://localhost/api_megacable/television_cable"
         }).success(function(data){
             console.log(data);
             $scope.datos=data;
@@ -172,7 +218,20 @@ angularRoutingApp.controller('planesController', function($scope) {
 });
 angularRoutingApp.controller('portaController', function($scope) {
 });
-angularRoutingApp.controller('banda_anchaController', function($scope) {
+angularRoutingApp.controller('banda_anchaController', function($scope, $http, $sce) 
+{
+    $http({
+        method:"get",
+        url: "http://localhost/api_megacable/internet"
+        }).success(function(data){
+            console.log(data);
+            $scope.datos=data;
+            
+        $scope.html = $sce.trustAsHtml();
+
+        }).error(function(data){
+            alert("Ha ocurrido un error al mostrar los datos");
+    });
 });
 angularRoutingApp.controller('inalambricoController', function($scope) {
 });
@@ -184,8 +243,8 @@ angularRoutingApp.controller('ruletaController', function($scope) {
 });*/
 /*angularRoutingApp.controller('whackamoleController', function($scope) {
 });*/
-/*angularRoutingApp.controller('crazy_birdsController', function($scope) {
-});*/
+angularRoutingApp.controller('crazy_birdsController', function($scope) {
+});
 /*Consumiendo Json*/
 /*Promociones*/
 angularRoutingApp.controller("ruta_promos", function ($scope, $http) {

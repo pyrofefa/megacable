@@ -15,13 +15,13 @@ $(document).ready(function()
 					if (data.tipo=="video") 
                 	{
                 		//$("#consumi").append("<li class='item video'> <video id='mi-video"+data.id+"'controls> <source src='http://agua.dev/comercial/"+data.ruta+"'> </video> </li>");
-                		$("#consumi").append("<li class='item video'> <video id='mi-video"+data.id+"' > <source src='http://localhost/api_megacable/bannerview/"+data.ruta+"'> </video> </li>");
+                		$("#consumi").append("<li class='item video'> <video id='mi-video"+data.id+"' > <source src='http://localhost/api_megacable/imagenes/banner_view/"+data.ruta+"'> </video> </li>");
                 		//$("#myCarousel").carousel('pause');
                 	}
                 	else if(data.tipo=="imagen")
                 	{
                 		//$("#consumi").append("<li class='item imagen'> <img src='http://agua.dev/comercial/"+data.ruta+"'> </li>");
-                		$("#consumi").append("<li class='item imagen'> <img src='http://localhost/api_megacable/bannerview/"+data.ruta+"' height='200px'> </li>");
+                		$("#consumi").append("<li class='item imagen'> <img src='http://localhost/api_megacable/imagenes/banner_view/"+data.ruta+"' height='200px'> </li>");
 					}
 				    $("#mi-video"+data.id).on('ended', function(e){
         				//console.log('El video: mi-video'+data.id+' ha finalizado!!!');

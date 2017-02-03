@@ -25,88 +25,17 @@
 				</div>
 			</div>
 			<br>
-			<div class="container">
-				<div class="row">
+			<div class="container" ng-controller="banda_anchaController">
+				<div class="row" ng-repeat="data in datos">
 					<hr>
-					<div class="col-md-6"><img src="img/10mb.png"></div>
+					<div class="col-md-6"><img src="http://localhost/api_megacable/imagenes/internet/{{data.ruta}}"></div>
 					<div class="col-md-6">
 						<h1 style="text-align:left; font-size:20pt">
-							<img src="img/punto.png"> Comparte fotos, música y videos.
-						</h1>
-						<h1 style="text-align:left; font-size:20pt">
-							<img src="img/punto.png"> Videochat en múltiples sesiones.
-						</h1>
-						<h1 style="text-align:left; font-size:20pt">
-							<img src="img/punto.png"> Navega rápido y sin interrupciones.
-						</h1>
-						<h1 style="text-align:left; font-size:20pt">
-							<img src="img/punto.png"> Contrátalo en alguno de nuestros atractivos paquetes  y ahorra al máximo.
+							<img src="img/punto.png"> {{data.descripcion}}
 						</h1>
 					</div>
 				</div>
 				<hr>
-				<div class="row">
-					<br><br>
-					<div class="col-md-6"><img src="img/20mb.png"></div>
-					<div class="col-md-6">
-						<h1 style="text-align:left; font-size:20pt">
-							<img src="img/punto.png"> Disfruta tus películas por internet.
-						</h1>
-						<h1 style="text-align:left; font-size:20pt">
-							<img src="img/punto.png"> Juega en línea y olvidate del LAG.
-						</h1>
-						<h1 style="text-align:left; font-size:20pt">
-							<img src="img/punto.png"> Descarga gran cantidad de archivos simultaneamente.
-						</h1>
-						<h1 style="text-align:left; font-size:20pt">
-							<img src="img/punto.png"> Comparte todo lo que quieras.
-						</h1>
-						<h1 style="text-align:left; font-size:20pt">
-							<img src="img/punto.png"> Contrátalo en alguno de nuestros atractivos paquetes. 
-						</h1>
-					</div>
-				</div>
-				<hr>
-				<div class="row">
-					<br><br>
-					<div class="col-md-6"><img src="img/50mb.png"></div>
-					<div class="col-md-6">
-						<h1 style="text-align:left; font-size:20pt">
-							<img src="img/punto.png"> Videoconferencias sin interrupciones.
-						</h1>
-						<h1 style="text-align:left; font-size:20pt">
-							<img src="img/punto.png"> Disfruta de la calidad HD en tus videos.
-						</h1>
-						<h1 style="text-align:left; font-size:20pt">
-							<img src="img/punto.png"> Haz todo y mucho más rápido.
-						</h1>
-						<h1 style="text-align:left; font-size:20pt">
-							<img src="img/punto.png"> Contrátalo en alguno de nuestros atractivos paquetes. 
-						</h1>
-					</div>
-				</div>
-				<hr>
-				<div class="row">
-					<br><br>
-					<div class="col-md-6"><img src="img/100mb.png"></div>
-					<div class="col-md-6">	
-						<h1 style="text-align:left; font-size:20pt">
-							<img src="img/punto.png"> La conexión mas rápida.
-						</h1>
-						<h1 style="text-align:left; font-size:20pt">
-							<img src="img/punto.png"> Sin límites en las descargas.
-						</h1>
-						<h1 style="text-align:left; font-size:20pt">
-							<img src="img/punto.png"> Placentera sensación de inmediatez.
-						</h1>
-						<h1 style="text-align:left; font-size:20pt">
-							<img src="img/punto.png"> Una nueva experiencia en internet. 
-						</h1>
-						<h1 style="text-align:left; font-size:20pt">
-							<img src="img/punto.png"> Contrátalo en alguno de nuestros atractivos paquetes. 
-						</h1>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>

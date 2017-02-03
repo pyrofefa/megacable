@@ -14,7 +14,10 @@
 	</div>
 	<hr>
 	<br>
+	<div id="contenido_scroll">
+	<div id="subir_bajar">
 	<div class="container">
+		
 		<div class="row">
 			<div class="col-md-12">
 				<h1 style="text-align:left; font-size:36pt;">M&aacute;s y mejores canales</h1>
@@ -23,8 +26,8 @@
 		</div>
 	</div>
 	<br><br><br><br>
-	<div class="container" ng-controller="television_cableController">
-		<div class="row">
+	<div class="container" ng-controller="television_cableController" style="height: 800px;">
+ 		<div class="row">
 			<div class="col-md-3" ng-repeat="data in datos">
 				<div style="width: 230px; height: 581px; background-color: #000;">
 					<div style="width: 230px; height: 115px; background-color: #0066B3;">
@@ -43,4 +46,27 @@
 			</div>
 		</div>
 	</div>
-</div>	
+	</div>
+	</div>
+	<br><br>
+	<div class="container">
+	<!--Boton hacia abajo-->
+	<div class="row">
+		<div class="col-md-6"></div>
+		<div class="col-md-12" id="boton_abajo" style="width:52px; height:32px;" >
+    		<p  style="text-align:center;"">
+    			<img src="img/flecha_abajo.png" style="cursor:pointer">
+    		</p>
+		</div>
+	</div>
+
+	<!--Boton hacia arriba-->
+	<div class="row">
+		<div class="col-md-6"></div>
+		<div class="col-md-12" style="width:52px; height:32px;" >
+  			<p id="boton_arriba" hidden style="text-align:center"><img src="img/flecha_arriba.png" style="cursor:pointer"></p>
+		</div>
+	</div>
+	</div>
+</div>
+<script type="text/javascript" src="js/scroll.js"></script>	

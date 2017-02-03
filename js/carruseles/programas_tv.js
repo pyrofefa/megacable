@@ -16,7 +16,7 @@ $( document ).ready(function() {
             success: function (data) {
                 console.log(data);
                 $.each(data, function(index, data){
-                    $("#consumip").append("<div class='col-md-3'><img src='http://localhost/api_imagenes/programas_tv/"+data.ruta+"'></div>");
+                    $("#consumip").append("<div class='col-md-3'><img src='http://localhost/api_megacable/imagenes/programas_tv/"+data.ruta+"'></div>");
                 })
             },
             error: function (response) {
@@ -38,7 +38,7 @@ $( document ).ready(function() {
             success: function (data) {
                 console.log(data);
                 $.each(data, function(index, data){
-                    $("#consumip2").append("<div class='col-md-3'><img src='http://localhost/api_imagenes/programas_tv/"+data.ruta+"'></div>");
+                    $("#consumip2").append("<div class='col-md-3'><img src='http://localhost/api_megacable/imagenes/programas_tv/"+data.ruta+"'></div>");
                 })
             },
             error: function (response) {

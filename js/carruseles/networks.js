@@ -16,7 +16,7 @@ $( document ).ready(function() {
             success: function (data) {
                 console.log(data);
                 $.each(data, function(index, data){
-                    $("#consumin").append("<div class='col-md-3'><img src='http://localhost/api_imagenes/networks/"+data.ruta+"'></div>");
+                    $("#consumin").append("<div class='col-md-3'><img src='http://localhost/api_megacable/imagenes/networks/"+data.ruta+"'></div>");
                 })
             },
             error: function (response) {
@@ -38,7 +38,7 @@ $( document ).ready(function() {
             success: function (data) {
                 console.log(data);
                 $.each(data, function(index, data){
-                    $("#consumin2").append("<div class='col-md-3'><img src='http://localhost/api_imagenes/networks/"+data.ruta+"'></div>");
+                    $("#consumin2").append("<div class='col-md-3'><img src='http://localhost/api_megacable/imagenes/networks/"+data.ruta+"'></div>");
                 })
             },
             error: function (response) {

@@ -16,7 +16,7 @@ $( document ).ready(function() {
             success: function (data) {
                 console.log(data);
                 $.each(data, function(index, data){
-                    $("#consumi").append("<div class='col-md-3'><img src='http://localhost/api_imagenes/fox_mas/"+data.ruta+"'></div>");
+                    $("#consumif").append("<div class='col-md-3'><img src='http://localhost/api_megacable/imagenes/fox_mas/"+data.ruta+"'></div>");
                 })
             },
             error: function (response) {
@@ -38,7 +38,7 @@ $( document ).ready(function() {
             success: function (data) {
                 console.log(data);
                 $.each(data, function(index, data){
-                    $("#consumi2").append("<div class='col-md-3'><img src='http://localhost/api_imagenes/fox_mas/"+data.ruta+"'></div>");
+                    $("#consumif2").append("<div class='col-md-3'><img src='http://localhost/api_megacable/imagenes/fox_mas/"+data.ruta+"'></div>");
                 })
             },
             error: function (response) {

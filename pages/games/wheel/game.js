@@ -10,7 +10,7 @@ var canSpin;
 // slices (prizes) placed in the wheel
 var slices = 8;
 // prize names, starting from 12 o'clock going clockwise
-var slicePrizes = ["RECLAMA TU PREMIO", "PERDISTE", "PERDISTE", "PERDISTE", "RECLAMA TU PREMIO", "PERDISTE", "PERDISTE", "PERDISTE"];
+var slicePrizes = ["PERDISTE", "PERDISTE", "PERDISTE", "PERDISTE", "PERDISTE", "PERDISTE", "PERDISTE", "PERDISTE"];
 // the prize you are about to win
 var prize;
 // text field where to show the prize

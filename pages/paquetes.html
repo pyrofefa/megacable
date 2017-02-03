@@ -33,317 +33,192 @@
               </ul>
   
               <div class="tab-content" style="width:650px;">
-                  <div class="tab-pane active" id="tres"> 
-                   <div id="contenido_scroll" style="height:650px;">
-                   <div id="subir_bajar" style="height:650px;"> 
-                      <div class="container" style="width:1050px; ">
+                  <div class="tab-pane active" id="tres" ng-controller="paquetetresController"> 
+                       <div class="container" id="contenido_scroll" style="width:1050px; height: 700px; ">
+                          <div id="subir_bajar" style="height: 800px;">
                           <div class="row">
-                              <div class="col-md-3" style="height:100px;" id="borde_derecha">
-                                  <img src="img/triangulo.png">
-                                  <h1>TELEVISI&Oacute;N</h1>
-                              </div>
-                              <div class="col-md-3" style="height:100px;" id="borde_derecha">
-                                  <br>
-                                  <h1>INTERNET</h1>
-                              </div>
-                              <div class="col-md-3" style="height:100px;" id="borde_derecha">
-                                  <br>
-                                  <h1>TELEFON&Iacute;A</h1>
-                              </div>
-                              <div class="col-md-3">
-                                  <br>
-                                  <h1>PRECIO</h1>
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class="col-md-3" id="borde_derecha" style="height:230px;">
-                                  <h1>PAQUETE TOTAL CON HD</h1>
-                                  <h1 style="font-size:15pt;"><strong>239 Canales + 50 Canales de Audio</strong></h1>
-                              </div>
-                              <div class="col-md-3" id="borde_derecha" style="height:230px;">
-                                  <h1>Hasta 200  Mbps</h1>
-                                  <h1 style="font-size:15pt;"><strong>Modem Inalámbrico, Correo eléctronico, WIFI en zonas Megacable</strong></h1>
-                              </div>
-                              <div class="col-md-3" id="borde_derecha" style="height:230px;">
-                                  <h1 style="font-size:20pt;">Minutos a Celular, llamadas locales, nacionales y LD EU/CAN ilimitados</h1>
-                              </div>
-                              <div class="col-md-3">
-                                  <h1 style="font-size:20pt;"><strong> $ 1199  Pronto Pago</strong></h1>
-                                  <h1 style="font-size:20pt;">$ 1249  Pago normal</h1>
+                              <div class="col-md-12" style="width: 1040px;">
+                                  <table class="table">
+                                        <tr>
+                                          <th><h1>TELEVISI&Oacute;N</h1>
+                                          <th><h1>INTERNET</h1>
+                                          <th><h1>TELEFONÍA</h1>
+                                          <th><h1>PRECIO</h1></th>  
+                                        </tr>
+                                        <tr ng-repeat="data in datos" >
+                                            <td id="borde_derecha_paquetes">
+                                              <h2>{{data.nombre}}</h2>
+                                              <h3><strong>{{data.numero_canales}} Canales + {{data.numero_musica}} Canales de Audio</strong></h3>
+                                            </td>
+                                            <td id="borde_derecha_paquetes">
+                                                <br>
+                                                <h3 style="text-align: center;">Hasta {{data.velocidades}} Mbps</h3>
+                                                <h5 style="text-align: center;"><strong>Modem Inalámbrico, Correo eléctronico, WIFI en zonas Megacable</strong></h5>
+                                            </td>
+                                            <td id="borde_derecha_paquetes"> 
+                                              <br><br><br>
+                                              <h5 style="text-align: center;">{{data.descripcion}}</h5>
+                                            </td>
+                                            <td>
+                                                <h3 style="text-align: center;"><strong> $ {{data.precio_pronto}} Pronto Pago</strong></h3>
+                                                <h3 style="text-align: center;">$ {{data.precio}} Pago normal</h3>
+                                            </td>
+                                        </tr>
+                                    </table>
                               </div>
                           </div>
-                          <div class="row" id="borde_arriba" style="width:1050px;">
-                              <div class="col-md-3" id="borde_derecha" style="height:230px;">
-                                  <h1>PAQUETE TOTAL CON HD</h1>
-                                  <h1 style="font-size:15pt;"><strong>239 Canales + 50 Canales de Audio</strong></h1>
-                              </div>
-                              <div class="col-md-3" id="borde_derecha" style="height:230px;">
-                                  <h1>Hasta 100  Mbps</h1>
-                                  <h1 style="font-size:15pt;"><strong>Modem Inalámbrico, Correo eléctronico, WIFI en zonas Megacable</strong></h1>
-                              </div>
-                              <div class="col-md-3" id="borde_derecha" style="height:230px;">
-                                  <h1 style="font-size:20pt;">Minutos a Celular, llamadas locales, nacionales y LD EU/CAN ilimitados</h1>
-                              </div>
-                              <div class="col-md-3">
-                                  <h1 style="font-size:20pt;"><strong> $ 1099  Pronto Pago</strong></h1>
-                                  <h1 style="font-size:20pt;">$ 1149  Pago normal</h1>
-                              </div>
                           </div>
-                          <div class="row" id="borde_arriba" style="width:1050px;">
-                              <div class="col-md-3" id="borde_derecha" style="height:230px;">
-                                  <h1>PAQUETE TOTAL CON HD</h1>
-                                  <h1 style="font-size:15pt;"><strong>239 Canales + 50 Canales de Audio</strong></h1>
-                              </div>
-                              <div class="col-md-3" id="borde_derecha" style="height:230px;">
-                                  <h1>Hasta 50  Mbps</h1>
-                                  <h1 style="font-size:15pt;"><strong>Modem Inalámbrico, Correo eléctronico, WIFI en zonas Megacable</strong></h1>
-                              </div>
-                              <div class="col-md-3" id="borde_derecha" style="height:230px;">
-                                  <h1 style="font-size:20pt;">Minutos a Celular, llamadas locales, nacionales y LD EU/CAN ilimitados</h1>
-                              </div>
-                              <div class="col-md-3">
-                                  <h1 style="font-size:20pt;"><strong> $ 999 Pronto Pago</strong></h1>
-                                  <h1 style="font-size:20pt;">$ 1049 Pago normal</h1>
-                              </div>
-                          </div>
-                          <div class="row" id="borde_arriba" style="width:1050px; height:230px" >
-                              <div class="col-md-3" id="borde_derecha" style="height:230px;">
-                                  <h1>SÚPER DIGITAL + HD TOTAL</h1>
-                                  <h1 style="font-size:15pt;"><strong>226 Canales + 50 Canales de Audio</strong></h1>
-                              </div>
-                              <div class="col-md-3" id="borde_derecha" style="height:230px;">
-                                  <h1>Hasta 20  Mbps</h1>
-                                  <h1 style="font-size:15pt;"><strong>Modem Inalámbrico, Correo eléctronico, WIFI en zonas Megacable</strong></h1>
-                              </div>
-                              <div class="col-md-3" id="borde_derecha" style="height:230px;">
-                                  <h1 style="font-size:20pt;">Minutos a Celular, llamadas locales, nacionales y LD EU/CAN ilimitados</h1>
-                              </div>
-                              <div class="col-md-3">
-                                  <h1 style="font-size:20pt;"><strong> $ 729 Pronto Pago</strong></h1>
-                                  <h1 style="font-size:20pt;">$ 759 Pago normal</h1>
-                              </div>
-                          </div>
-                          <div class="row" id="borde_arriba" style="width:1050px;">
-                              <div class="col-md-3" id="borde_derecha" style="height:230px;">
-                                  <h1>CONECTA DIGITAL + HD ACCESS</h1>
-                                  <h1 style="font-size:15pt;">
-                                      <strong>88 Canales + 50 Canales de Audio</strong>
-                                  </h1>
-                              </div>
-                              <div class="col-md-3" id="borde_derecha" style="height:230px;">
-                                  <h1>Hasta 20  Mbps</h1>
-                                  <h1 style="font-size:15pt;"><strong>Modem Inalámbrico, Correo eléctronico, WIFI en zonas Megacable</strong></h1>
-                              </div>
-                              <div class="col-md-3" id="borde_derecha" style="height:230px;">
-                                  <h1 style="font-size:20pt;">Minutos a Celular, llamadas locales, nacionales y LD EU/CAN ilimitados</h1>
-                              </div>
-                              <div class="col-md-3">
-                                  <h1 style="font-size:20pt;"><strong> $ 589 Pronto Pago</strong></h1>
-                                  <h1 style="font-size:20pt;">$ 619 Pago normal</h1>
-                              </div>
-                              
-                          </div>
-                           <div class="row" id="borde_arriba" style="width:1050px;">
-                              <div class="col-md-3" id="borde_derecha" style="height:230px;">
-                                  <h1>SÚPER DIGITAL + HD TOTAL</h1>
-                                  <h1 style="font-size:15pt;">
-                                      <strong>226 Canales + 50 Canales de Audio</strong>
-                                  </h1>
-                              </div>
-                              <div class="col-md-3" id="borde_derecha" style="height:230px;">
-                                  <h1>Hasta 200  Mbps</h1>
-                                  <h1 style="font-size:15pt;"><strong>Modem Inalámbrico, Correo eléctronico, WIFI en zonas Megacable</strong></h1>
-                              </div>
-                              <div class="col-md-3" id="borde_derecha" style="height:230px;">
-                                  <h1 style="font-size:20pt;">Minutos a Celular, llamadas locales, nacionales y LD EU/CAN ilimitados</h1>
-                              </div>
-                              <div class="col-md-3">
-                                  <h1 style="font-size:20pt;"><strong> $ 1079 Pronto Pago</strong></h1>
-                                  <h1 style="font-size:20pt;">$ 1109 Pago normal</h1>
-                              </div>
-                              
-                          </div> 
-                          <div class="row" id="borde_arriba" style="width:1050px;">
-                              <div class="col-md-3" id="borde_derecha" style="height:230px;">
-                                  <h1>SÚPER DIGITAL + HD TOTAL</h1>
-                                  <h1 style="font-size:15pt;">
-                                      <strong>226 Canales + 50 Canales de Audio</strong>
-                                  </h1>
-                              </div>
-                              <div class="col-md-3" id="borde_derecha" style="height:230px;">
-                                  <h1>Hasta 100  Mbps</h1>
-                                  <h1 style="font-size:15pt;"><strong>Modem Inalámbrico, Correo eléctronico, WIFI en zonas Megacable</strong></h1>
-                              </div>
-                              <div class="col-md-3" id="borde_derecha" style="height:230px;">
-                                  <h1 style="font-size:20pt;">Minutos a Celular, llamadas locales, nacionales y LD EU/CAN ilimitados</h1>
-                              </div>
-                              <div class="col-md-3">
-                                  <h1 style="font-size:20pt;"><strong> $ 979 Pronto Pago</strong></h1>
-                                  <h1 style="font-size:20pt;">$ 1009 Pago normal</h1>
-                              </div>
-                              
-                          </div> 
-                          <div class="row" id="borde_arriba" style="width:1050px;">
-                              <div class="col-md-3" id="borde_derecha" style="height:230px;">
-                                  <h1>SÚPER DIGITAL + HD TOTAL</h1>
-                                  <h1 style="font-size:15pt;">
-                                      <strong>226 Canales + 50 Canales de Audio</strong>
-                                  </h1>
-                              </div>
-                              <div class="col-md-3" id="borde_derecha" style="height:230px;">
-                                  <h1>Hasta 50  Mbps</h1>
-                                  <h1 style="font-size:15pt;"><strong>Modem Inalámbrico, Correo eléctronico, WIFI en zonas Megacable</strong></h1>
-                              </div>
-                              <div class="col-md-3" id="borde_derecha" style="height:230px;">
-                                  <h1 style="font-size:20pt;">Minutos a Celular, llamadas locales, nacionales y LD EU/CAN ilimitados</h1>
-                              </div>
-                              <div class="col-md-3">
-                                  <h1 style="font-size:20pt;"><strong> $ 879 Pronto Pago</strong></h1>
-                                  <h1 style="font-size:20pt;">$ 909 Pago normal</h1>
-                              </div>
-                              
-                          </div> 
-                          <div class="row" id="borde_arriba" style="width:1050px;">
-                              <div class="col-md-3" id="borde_derecha" style="height:230px;">
-                                  <h1>CONECTA DIGITAL + HD ACCESS</h1>
-                                  <h1 style="font-size:15pt;">
-                                      <strong>88 Canales + 50 Canales de Audio</strong>
-                                  </h1>
-                              </div>
-                              <div class="col-md-3" id="borde_derecha" style="height:230px;">
-                                  <h1>Hasta 10  Mbps</h1>
-                                  <h1 style="font-size:15pt;"><strong>Modem Inalámbrico, Correo eléctronico, WIFI en zonas Megacable</strong></h1>
-                              </div>
-                              <div class="col-md-3" id="borde_derecha" style="height:230px;">
-                                  <h1 style="font-size:20pt;">Minutos a Celular, llamadas locales, nacionales y LD EU/CAN ilimitados</h1>
-                              </div>
-                              <div class="col-md-3">
-                                  <h1 style="font-size:20pt;"><strong> $ 539 Pronto Pago</strong></h1>
-                                  <h1 style="font-size:20pt;">$ 569 Pago normal</h1>
-                              </div>
-                        </div> 
-                      </div>
-                      <div class="container" id="borde_arriba" style="width:1050px;"></div>
                     </div>
-                    </div>
-                    <br><br>
-                    <div class="container">
-                        <!--Boton hacia abajo-->
-                        <div class="row">
-                          <div class="col-md-6"></div>
-                          <div class="col-md-12" id="boton_abajo" style="width:52px; height:32px;" >
-                              <p  style="text-align:center;"">
-                                <img src="img/flecha_abajo.png" style="cursor:pointer">
-                              </p>
-                          </div>
+                     <div class="container">
+                              <!--Boton hacia abajo-->
+                              <div class="row">
+                                  <div class="col-md-6"></div>
+                                      <div class="col-md-12" id="boton_abajo" style="width:52px; height:32px;" >
+                                          <p  style="text-align:center;"">
+                                              <img src="img/flecha_abajo.png" style="cursor:pointer">
+                                          </p>
+                                      </div>
+                              </div>
+                              <!--Boton hacia arriba-->
+                              <div class="row">
+                                  <div class="col-md-6"></div>
+                                      <div class="col-md-12" style="width:52px; height:32px;" >
+                                            <p id="boton_arriba" hidden style="text-align:center"><img src="img/flecha_arriba.png" style="cursor:pointer"></p>
+                                      </div>
+                              </div>
                         </div>
-                        <!--Boton hacia arriba-->
-                          <div class="row">
-                            <div class="col-md-6"></div>
-                            <div class="col-md-12" style="width:52px; height:32px;" >
-                                <p id="boton_arriba" hidden style="text-align:center"><img src="img/flecha_arriba.png" style="cursor:pointer"></p>
-                            </div>
-                          </div>
-                      </div>
-                  </div>
+                   </div>
                   <div class="tab-pane fane" id="dos">
-                      <div class="container" style="width:1050px;">
+                      <div class="container" id="contenido_scroll_doble" style="width:1050px; height: 700px;"">
+                          <div id="subir_bajar_doble" style="height: 600px;">
                           <div class="row">
-                              <div class="col-md-4" style="height:100px;" id="borde_derecha">
-                                  <br>
-                                  <h1>INTERNET</h1>
-                              </div>
-                              <div class="col-md-4" style="height:100px;" id="borde_derecha">
-                                  <img src="img/triangulo.png">
-                                  <h1>TELEFON&Iacute;A</h1>
-                              </div>
-                              <div class="col-md-4" style="height:100px;">
-                                  <br>
-                                  <h1>PRECIO</h1>
-                              </div>  
+                              <div class="col-md-12" ng-controller="paquetedosinternetController" style="width: 1040px;">
+                                  <table class="table" style="border-color: #0080FF;">
+                                        <tr>
+                                          <th><h1>TELEVISI&Oacute;N</h1>
+                                          <th><h1>INTERNET</h1>
+                                          <th><h1>PRECIO</h1></th>  
+                                        </tr>
+                                        <tr ng-repeat="data in datos" >
+                                            <td id="borde_derecha_paquetes">
+                                              <br>
+                                              <h1>{{data.nombre}}</h1>
+                                              <h1><strong>{{data.numero_canales}} Canales + {{data.numero_musica}} Canales de Audio</strong></h1>
+                                              <br><br>
+                                            </td>
+                                            <td id="borde_derecha_paquetes">
+                                                <br><br><br>
+                                                <h3>Hasta {{data.velocidades}} Mbps</h3>
+                                                <h5 style="text-align: center;"><strong>Modem Inalámbrico, Correo eléctronico, WIFI en zonas Megacable</strong></h5>
+                                            </td>
+                                            <td>
+                                                <br>
+                                                <h1><strong> $ {{data.precio_pronto}} Pronto Pago</strong></h1>
+                                                <h1>$ {{data.precio}} Pago normal</h1>
+                                                <br><br>
+                                            </td>
+                                        </tr>
+                                    </table>
+                              </div>    
                           </div>
                           <div class="row">
-                              <div class="col-md-4" id="borde_derecha">
-                                  <h1>Hasta 20 Mbps</h1>
-                                  <h1 style="font-size:20pt;"><strong>Modem Inalámbrico, Correo eléctronico, WIFI en zonas Megacable</strong></h1>
-                              </div>
-                              <div class="col-md-4" id="borde_derecha">
-                                 <h1>Minutos a Celular, llamadas locales, nacionales y LD EU/CAN ilimitados</h1>
-                              </div>
-                              <div class="col-md-4">
-                                  <h1><strong> $ 479 Pronto Pago</strong></h1>
-                                  <h1>$ 499 Pago normal</h1>
-                              </div>
-                          </div>
-                           <div class="row" id="borde_arriba" style="width:1050px;">
-                              <div class="col-md-4" id="borde_derecha">
-                                  <h1>Hasta 50 Mbps</h1>
-                                  <h1 style="font-size:20pt;"><strong>Modem Inalámbrico, Correo eléctronico, WIFI en zonas Megacable</strong></h1>
-                              </div>
-                              <div class="col-md-4" id="borde_derecha">
-                                  <h1>Minutos a Celular, llamadas locales, nacionales y LD EU/CAN ilimitados</h1>
-                              </div>
-                              <div class="col-md-4">
-                                  <h1><strong> $ 579 Pronto Pago</strong></h1>
-                                  <h1>$ 599 Pago normal</h1>
-                              </div>
-                          </div>
-                           <div class="row" id="borde_arriba" style="width:1050px;">
-                              <div class="col-md-4" id="borde_derecha">
-                                  <h1>Hasta 10 Mbps</h1>
-                                  <h1 style="font-size:20pt;"><strong>Modem Inalámbrico, Correo eléctronico, WIFI en zonas Megacable</strong></h1>
-                              </div>
-                              <div class="col-md-4" id="borde_derecha">
-                                  <h1>Minutos a Celular, llamadas locales, nacionales y LD EU/CAN ilimitados</h1>
-                              </div>
-                              <div class="col-md-4">
-                                  <h1><strong> $ 299 Pronto Pago</strong></h1>
-                                  <h1>$ 329 Pago normal</h1>
+                              <div class="col-md-12" ng-controller="paquetedostelefoniatController" style="width: 1040px;">
+                                  <table class="table">
+                                        <tr>
+                                          <th><h1>TELEVISI&Oacute;N</h1>
+                                          <th><h1>TELEFONÍA</h1>
+                                          <th><h1>PRECIO</h1></th>  
+                                        </tr>
+                                        <tr ng-repeat="data in datos" >
+                                            <td id="borde_derecha_paquetes">
+                                              <br>
+                                              <h1>{{data.nombre}}</h1>
+                                              <h1><strong>{{data.numero_canales}} Canales + {{data.numero_musica}} Canales de Audio</strong></h1>
+                                              <br><br>
+                                            </td>
+                                            <td id="borde_derecha_paquetes">
+                                              <br><br><br><br>
+                                              <h5 style="text-align: center;">{{data.descripcion}}</h5>
+                                            </td>
+                                            <td>
+                                                <br>
+                                                <h1><strong> $ {{data.precio_pronto}} Pronto Pago</strong></h1>
+                                                <h1>$ {{data.precio}} Pago normal</h1>
+                                                <br><br>
+                                            </td>
+                                        </tr>
+                                    </table>
                               </div>
                           </div>
                       </div>
-                      <div class="container" id="borde_arriba" style="width:1050px;"></div>
-                  </div>
-                  <div class="tab-pane fane" id="uno" ng-controller="paquetesController">
-                       <div class="container" style="width:1050px;">
-                          <div class="row">
-                            <div class="col-md-6">
-                                <h1>TELEVISI&Oacute;N</h1>
-                                <div ng-repeat="data in datos" id="borde_derecha" style="height:250px; width:530px;">      
-                                    <br>
-                                    <h1>{{data.nombre}}</h1>
-                                    <h1><strong>{{data.numero_canales}} Canales + {{data.numero_musica}} Canales de Audio</strong></h1>
-                                </div>
-                            </div>
-                            <div class="col-md-6"  style="width:500px;">
-                                <h1>PRECIO</h1>
-                                <div ng-repeat="data in datos">
-                                        <br>
-                                        <h1><strong> $ {{data.precio}} Pronto Pago</strong></h1>
-                                        <h1>$ {{data.precio_pronto}} Pago normal</h1><br><br><br><br><br>
-                                </div>
-                            </div>
-                            <!--<div class="col-md-6" id="borde_derecha" style="height:250px; width:530px;">
-                                  
-                              <div ng-repeat="data in datos">      
-                                  <br>
-                                  <h1>{{data.nombre}}</h1>
-                                  <h1><strong>{{data.numero_canales}} Canales + {{data.numero_musica}} Canales de Audio</strong></h1>
-                              </div>
-                              <div ng-repeat="data in datos">
-                                <div class="col-md-6" style="width:500px;">
-                                    <h1>PRECIO</h1>
-                                    <br>
-                                    <h1><strong> $ {{data.precio}} Pronto Pago</strong></h1>
-                                    <h1>$ {{data.precio_pronto}} Pago normal</h1>
-                                </div>
-                              </div>
-                            </div>
-                          </div>-->
                       </div>
-                     <div class="container" id="borde_arriba" style="width:1050px;"></div>
+                      <div class="container">
+                              <!--Boton hacia abajo-->
+                              <div class="row">
+                                  <div class="col-md-6"></div>
+                                      <div class="col-md-12" id="boton_abajo_doble" style="width:52px; height:32px;" >
+                                          <p  style="text-align:center;"">
+                                              <img src="img/flecha_abajo.png" style="cursor:pointer">
+                                          </p>
+                                      </div>
+                              </div>
+                              <!--Boton hacia arriba-->
+                              <div class="row">
+                                  <div class="col-md-6"></div>
+                                      <div class="col-md-12" style="width:52px; height:32px;" >
+                                            <p id="boton_arriba_doble" hidden style="text-align:center"><img src="img/flecha_arriba.png" style="cursor:pointer"></p>
+                                      </div>
+                              </div>
+                        </div>
                   </div>
-              </div>
-				  </div>
-</div>
+                  <div class="tab-pane fane" id="uno" ng-controller="paqueteunoController">
+                       <div class="container" id="contenido_scroll_uno" style="width:1050px; height: 700px; ">
+                          <div id="subir_bajar_uno" style="height: 800px;">
+                          <div class="row">
+                              <div class="col-md-12" style="width: 1040px;">
+                                    <table class="table">
+                                        <tr>
+                                          <th><h1>TELEVISI&Oacute;N</h1>
+                                          <th><h1>PRECIO</h1></th>  
+                                        </tr>
+                                        <tr ng-repeat="data in datos" >
+                                            <td id="borde_derecha_paquetes">
+                                              <br>
+                                              <h1>{{data.nombre}}</h1>
+                                              <h1><strong>{{data.numero_canales}} Canales + {{data.numero_musica}} Canales de Audio</strong></h1>
+                                              <br><br>
+                                            </td>
+                                            <td>
+                                                <br>
+                                                <h1><strong> $ {{data.precio_pronto}} Pronto Pago</strong></h1>
+                                                <h1>$ {{data.precio}} Pago normal</h1>
+                                                <br><br>
+                                            </td>
+                                        </tr>
+                                    </table>
+                              </div>
+                         </div>
+                       </div>
+                       </div>
+                       <div class="container">
+                              <!--Boton hacia abajo-->
+                              <div class="row">
+                                  <div class="col-md-6"></div>
+                                      <div class="col-md-12" id="boton_abajo_uno" style="width:52px; height:32px;" >
+                                          <p  style="text-align:center;"">
+                                              <img src="img/flecha_abajo.png" style="cursor:pointer">
+                                          </p>
+                                      </div>
+                              </div>
+                              <!--Boton hacia arriba-->
+                              <div class="row">
+                                  <div class="col-md-6"></div>
+                                      <div class="col-md-12" style="width:52px; height:32px;" >
+                                            <p id="boton_arriba_uno" hidden style="text-align:center"><img src="img/flecha_arriba.png" style="cursor:pointer"></p>
+                                      </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+            </div>
 <script src="js/scroll.js" ></script>

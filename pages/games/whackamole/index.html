@@ -11,6 +11,8 @@
     <script type="text/javascript" src="../js/angular.min.js"></script>
     <script type="text/javascript" src="../js/angular-resource.min.js"></script>
     <script type="text/javascript" src="../js/app.js"></script>
+
+    <script type="text/javascript" src="../js/time.js"></script>    
 </head>
 <body>
 <header  ng-controller="ruta">
@@ -19,7 +21,7 @@
         <!--Creando el bucle (ponerle el ng-class pra saber cual sera el primer dato active de bootstrap)-->
         	<div class="item" ng-class="{active:!$index}" ng-repeat="data in datos">
             <!--Trayendo imagenes concatenando el json y poniendo su extension-->
-            	<img src="http://localhost/api_imagenes/banner_view/{{ data.ruta }}">
+            	<img src="http://localhost/api_megacable/imagenes/banner_view/{{ data.ruta }}">
             </div>
         </div>
     </div>
@@ -60,7 +62,7 @@
             <!--Creando el bucle (ponerle el ng-class pra saber cual sera el primer dato active de bootstrap)-->
            <div class="item" ng-class="{active:!$index}" ng-repeat="data in datos">
                 <!--Trayendo imagenes concatenando el json y poniendo su extension-->
-                <img src="http://localhost/api_imagenes/banner_footer/{{ data.ruta }}">
+                <img src="http://localhost/api_megacable/imagenes/banner_footer/{{ data.ruta }}">
             </div>
         </div>
     </div>    
