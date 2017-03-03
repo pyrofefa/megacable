@@ -18,7 +18,7 @@ function timerIncrement()
 
   noActivity = noActivity + 1;
   //console.log(flag);
-  console.log("noActivity: "+noActivity);
+  //console.log("noActivity: "+noActivity);
   
     if (noActivity > 100)
     {

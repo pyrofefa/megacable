@@ -8,7 +8,7 @@ $( document ).ready(function() {
     });
     
     $.ajax({
-        url: "http://localhost/api_megacable/tv_en_vivoprimero",
+        url: "http://clientes.teknol.net/api_megacable/tv_en_vivoprimero",
         data: "{}",
         dataType: "json",
         type: "GET",
@@ -16,21 +16,21 @@ $( document ).ready(function() {
             success: function (data) {
                 console.log(data);
                 $.each(data, function(index, data){
-                    $("#consumi_tv").append("<div class='col-md-3'><img src='http://localhost/api_megacable/imagenes/tv_en_vivo/"+data.ruta+"'></div>");
+                    $("#consumi_tv").append("<div class='col-md-3'><img src='http://clientes.teknol.net/api_megacable/imagenes/tv_en_vivo/"+data.ruta+"'></div>");
                 })
             },
             error: function (response) {
-                alert("error al cargar el carusel");
+                console.log("error al cargar el carusel");
                 console.log(response);
             },
             failure: function (response) {
-                alert("failure");
+                console.log("failure");
                 console.log(response);
             }
     });
 
     $.ajax({
-        url: "http://localhost/api_megacable/tv_en_vivosegundo",
+        url: "http://clientes.teknol.net/api_megacable/tv_en_vivosegundo",
         data: "{}",
         dataType: "json",
         type: "GET",
@@ -38,20 +38,20 @@ $( document ).ready(function() {
             success: function (data) {
                 console.log(data);
                 $.each(data, function(index, data){
-                    $("#consumi_tv2").append("<div class='col-md-3'><img src='http://localhost/api_megacable/imagenes/tv_en_vivo/"+data.ruta+"'></div>");
+                    $("#consumi_tv2").append("<div class='col-md-3'><img src='http://clientes.teknol.net/api_megacable/imagenes/tv_en_vivo/"+data.ruta+"'></div>");
                 })
             },
             error: function (response) {
-                alert("error al cargar el carusel");
+                console.log("error al cargar el carusel");
                 console.log(response);
             },
             failure: function (response) {
-                alert("failure");
+                console.log("failure");
                 console.log(response);
             }
     });
     $.ajax({
-        url: "http://localhost/api_megacable/tv_en_vivotercero",
+        url: "http://clientes.teknol.net/api_megacable/tv_en_vivotercero",
         data: "{}",
         dataType: "json",
         type: "GET",
@@ -59,20 +59,20 @@ $( document ).ready(function() {
             success: function (data) {
                 console.log(data);
                 $.each(data, function(index, data){
-                    $("#consumi_tv3").append("<div class='col-md-3'><img src='http://localhost/api_megacable/imagenes/tv_en_vivo/"+data.ruta+"'></div>");
+                    $("#consumi_tv3").append("<div class='col-md-3'><img src='http://clientes.teknol.net/api_megacable/imagenes/tv_en_vivo/"+data.ruta+"'></div>");
                 })
             },
             error: function (response) {
-                alert("error al cargar el carusel");
+                console.log("error al cargar el carusel");
                 console.log(response);
             },
             failure: function (response) {
-                alert("failure");
+                console.log("failure");
                 console.log(response);
             }
     });
      $.ajax({
-        url: "http://localhost/api_megacable/tv_en_vivocuarto",
+        url: "http://clientes.teknol.net/api_megacable/tv_en_vivocuarto",
         data: "{}",
         dataType: "json",
         type: "GET",
@@ -80,20 +80,20 @@ $( document ).ready(function() {
             success: function (data) {
                 console.log(data);
                 $.each(data, function(index, data){
-                    $("#consumi_tv4").append("<div class='col-md-3'><img src='http://localhost/api_megacable/imagenes/tv_en_vivo/"+data.ruta+"'></div>");
+                    $("#consumi_tv4").append("<div class='col-md-3'><img src='http://clientes.teknol.net/api_megacable/imagenes/tv_en_vivo/"+data.ruta+"'></div>");
                 })
             },
             error: function (response) {
-                alert("error al cargar el carusel");
+                console.log("error al cargar el carusel");
                 console.log(response);
             },
             failure: function (response) {
-                alert("failure");
+                console.log("failure");
                 console.log(response);
             }
     });
     $.ajax({
-        url: "http://localhost/api_megacable/tv_en_vivocinco",
+        url: "http://clientes.teknol.net/api_megacable/tv_en_vivocinco",
         data: "{}",
         dataType: "json",
         type: "GET",
@@ -101,15 +101,15 @@ $( document ).ready(function() {
             success: function (data) {
                 console.log(data);
                 $.each(data, function(index, data){
-                    $("#consumi_tv5").append("<div class='col-md-3'><img src='http://localhost/api_megacable/imagenes/tv_en_vivo/"+data.ruta+"'></div>");
+                    $("#consumi_tv5").append("<div class='col-md-3'><img src='http://clientes.teknol.net/api_megacable/imagenes/tv_en_vivo/"+data.ruta+"'></div>");
                 })
             },
             error: function (response) {
-                alert("error al cargar el carusel");
+                console.log("error al cargar el carusel");
                 console.log(response);
             },
             failure: function (response) {
-                alert("failure");
+                console.log("failure");
                 console.log(response);
             }
     }); 

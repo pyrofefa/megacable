@@ -8,7 +8,7 @@ $( document ).ready(function() {
     });
     
     $.ajax({
-        url: "http://localhost/api_megacable/fox_mas_primero",
+        url: "http://clientes.teknol.net/api_megacable/fox_mas_primero",
         data: "{}",
         dataType: "json",
         type: "GET",
@@ -16,21 +16,21 @@ $( document ).ready(function() {
             success: function (data) {
                 console.log(data);
                 $.each(data, function(index, data){
-                    $("#consumif").append("<div class='col-md-3'><img src='http://localhost/api_megacable/imagenes/fox_mas/"+data.ruta+"'></div>");
+                    $("#consumif").append("<div class='col-md-3'><img src='http://clientes.teknol.net/api_megacable/imagenes/fox_mas/"+data.ruta+"'></div>");
                 })
             },
             error: function (response) {
-                alert("error al cargar el carusel");
+                console.log("error al cargar el carusel");
                 console.log(response);
             },
             failure: function (response) {
-                alert("failure");
+                console.log("failure");
                 console.log(response);
             }
     });
 
     $.ajax({
-        url: "http://localhost/api_megacable/fox_mas_segundo",
+        url: "http://clientes.teknol.net/api_megacable/fox_mas_segundo",
         data: "{}",
         dataType: "json",
         type: "GET",
@@ -38,15 +38,15 @@ $( document ).ready(function() {
             success: function (data) {
                 console.log(data);
                 $.each(data, function(index, data){
-                    $("#consumif2").append("<div class='col-md-3'><img src='http://localhost/api_megacable/imagenes/fox_mas/"+data.ruta+"'></div>");
+                    $("#consumif2").append("<div class='col-md-3'><img src='http://clientes.teknol.net/api_megacable/imagenes/fox_mas/"+data.ruta+"'></div>");
                 })
             },
             error: function (response) {
-                alert("error al cargar el carusel");
+                console.log("error al cargar el carusel");
                 console.log(response);
             },
             failure: function (response) {
-                alert("failure");
+                console.log("failure");
                 console.log(response);
             }
     });

@@ -128,3 +128,6 @@ footer{
 	background-color: #374762;
 
 }
+body{
+	overflow-x: hidden;
+}

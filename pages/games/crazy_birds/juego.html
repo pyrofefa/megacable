@@ -21,18 +21,20 @@
         <script type="text/javascript" src="../js/angular.min.js"></script>
         <script type="text/javascript" src="../js/angular-resource.min.js"></script>
         <script type="text/javascript" src="../js/app.js"></script>
-        <script type="text/javascript" src="../js/time.js"></script>    
+        <script type="text/javascript" src="../js/time.js"></script>
+        <script src="../js/banner_view.js"></script>
+        <script src="../js/banner_footer.js"></script>    
     </head>
     <body class="juegoDisplay">
     <!--Banner view-->
-        <header  ng-controller="ruta">
-            <div id="carusel" class="carousel slide" data-ride="carousel" data-interval="10000" style="width:1080px; height:512px;">
-                <div class="carousel-inner">
-                <!--Creando el bucle (ponerle el ng-class pra saber cual sera el primer dato active de bootstrap)-->
-                    <div class="item" ng-class="{active:!$index}" ng-repeat="data in datos">
-                        <!--Trayendo imagenes concatenando el json y poniendo su extension-->
-                        <img src="http://localhost/api_megacable/imagenes/banner_view/{{ data.ruta }}">
-                    </div>
+        <header style="width: 1080px; height: 512px;">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="carusel">
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                            <div id="consumi" class="carousel-inner"></div>
+                        </div> 
+                    </div>  
                 </div>
             </div>
         </header>
@@ -59,16 +61,69 @@
         </div>
         <!--Fin de juego-->
         <!--Banner estatico-->
-        <footer ng-controller="ruta_footer">
-        <div id="carusel" class="carousel slide" data-ride="carousel" data-interval="10000" style="width:1080px; height:208px;">
-       <div class="carousel-inner">
-            <!--Creando el bucle (ponerle el ng-class pra saber cual sera el primer dato active de bootstrap)-->
-           <div class="item" ng-class="{active:!$index}" ng-repeat="data in datos">
-                <!--Trayendo imagenes concatenando el json y poniendo su extension-->
-                <img src="http://localhost/api_megacable/imagenes/banner_footer/{{ data.ruta }}">
-            </div>
+      <footer style="width: 1080px; height: 208px;">
+        <div class="row">
+        <div class="col-md-12">
+            <div id="carusel">
+                <div id="myCarouselfooter" class="carousel slide" data-ride="carousel">
+                    <div id="consumifooter" class="carousel-inner"></div>
+                </div> 
+            </div>  
         </div>
-    </div>    
+     </div>
     </footer>    
+    <script type="text/javascript">
+    //bannerview
+    $('#myCarousel').on('slid.bs.carousel', function () 
+    {
+      console.log('slide');
+      var c = $('li.item.video').hasClass("active");//buscando items que son videos
+      console.log(c);
+
+      var id = $('li.item.video.active').children("video").attr("id");//trayendo el id del video k esta en la clase activo
+
+      //console.log(id);
+      
+      if (c==true){
+          $("#myCarousel").carousel('pause');//pausando carusel
+          document.getElementById(id).play();//reporduciendo video
+          //console.log("el video: "+id+" ha empezado!!!");                        
+      }
+      if (c==false){
+        //console.log('imagen');//si es imagen abrir contador de 45 segundos y al terminar dar vuelta al carusel 
+        $("#myCarousel").carousel('pause');//pausando carusel
+        window.setTimeout(function(){
+        $("#myCarousel").carousel('next');
+          },35000);
+      }
+
+    });
+
+    //bannerfooter
+    $('#myCarouselfooter').on('slid.bs.carousel', function () 
+    {
+      //console.log('slide');
+      var cf = $('li.item.videof').hasClass("active");//buscando items que son videos
+      //console.log(cf);
+
+      var idf = $('li.item.videof.active').children("video").attr("id");//trayendo el id del video k esta en la clase activo
+
+      //console.log(idf);
+      
+      if (cf==true){
+          $("#myCarouselfooter").carousel('pause');//pausando carusel
+          document.getElementById(idf).play();//reporduciendo video
+          //console.log("el video: "+idf+" ha empezado!!!");                        
+      }
+      if (cf==false){
+        //console.log('imagen');//si es imagen abrir contador de 45 segundos y al terminar dar vuelta al carusel 
+        $("#myCarouselfooter").carousel('pause');//pausando carusel
+        window.setTimeout(function(){
+        $("#myCarouselfooter").carousel('next');
+          },35000);
+      }
+
+    });
+    </script>    
     </body>
 </html>

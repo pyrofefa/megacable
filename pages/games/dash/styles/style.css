@@ -87,4 +87,7 @@ footer{
     display: inline-block;
     
 }
+body{
+    overflow-x: hidden;
+}
 

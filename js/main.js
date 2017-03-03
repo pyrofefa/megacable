@@ -77,7 +77,7 @@ angularRoutingApp.config(function($routeProvider) {
             controller  : 'memoriaController'
         })
         .when('/juegos/ruleta', {
-            templateUrl : 'pages/games/wheel/index.html',
+            templateUrl : 'pages/ruleta.html',
             controller  : 'ruletaController'
         })
          .when('/juegos/crazy_birds', {
@@ -128,43 +128,43 @@ angularRoutingApp.controller('paqueteunoController', function($scope, $http)
 {
     $http({
         method:"get",
-        url: "http://localhost/api_megacable/paquete_uno"
+        url: "http://clientes.teknol.net/api_megacable/paquete_uno"
         }).success(function(data){
             console.log(data);
             $scope.datos=data;
         }).error(function(data){
-            alert("Ha ocurrido un error al mostrar los datos");
+            console.log("Ha ocurrido un error al mostrar los datos");
     });
 });
 angularRoutingApp.controller('paquetedosinternetController', function($scope, $http) 
 {
     $http({
         method:"get",
-        url: "http://localhost/api_megacable/paquete_dos_internet"
+        url: "http://clientes.teknol.net/api_megacable/paquete_dos_internet"
         }).success(function(data){
             console.log(data);
             $scope.datos=data;
         }).error(function(data){
-            alert("Ha ocurrido un error al mostrar los datos");
+            console.log("Ha ocurrido un error al mostrar los datos");
     });
 });
 angularRoutingApp.controller('paquetedostelefoniatController', function($scope, $http) 
 {
     $http({
         method:"get",
-        url: "http://localhost/api_megacable/paquete_dos_telefonia"
+        url: "http://clientes.teknol.net/api_megacable/paquete_dos_telefonia"
         }).success(function(data){
             console.log(data);
             $scope.datos=data;
         }).error(function(data){
-            alert("Ha ocurrido un error al mostrar los datos");
+            console.log("Ha ocurrido un error al mostrar los datos");
     });
 });
 angularRoutingApp.controller('paquetetresController', function($scope, $http) 
 {
     $http({
         method:"get",
-        url: "http://localhost/api_megacable/paquete_tres"
+        url: "http://clientes.teknol.net/api_megacable/paquete_tres"
         }).success(function(data){
             console.log(data);
             $scope.datos=data;
@@ -172,7 +172,7 @@ angularRoutingApp.controller('paquetetresController', function($scope, $http)
             console.log(television);
 
         }).error(function(data){
-            alert("Ha ocurrido un error al mostrar los datos");
+            console.log("Ha ocurrido un error al mostrar los datos");
     });
 });
 angularRoutingApp.controller('promosController', function($scope) {
@@ -187,12 +187,12 @@ angularRoutingApp.controller('television_cableController', function($scope, $htt
 {
     $http({
         method:"get",
-        url: "http://localhost/api_megacable/television_cable"
+        url: "http://clientes.teknol.net/api_megacable/television_cable"
         }).success(function(data){
             console.log(data);
             $scope.datos=data;
         }).error(function(data){
-            alert("Ha ocurrido un error al mostrar los datos");
+            console.log("Ha ocurrido un error al mostrar los datos");
     });
 
 });
@@ -222,7 +222,7 @@ angularRoutingApp.controller('banda_anchaController', function($scope, $http, $s
 {
     $http({
         method:"get",
-        url: "http://localhost/api_megacable/internet"
+        url: "http://clientes.teknol.net/api_megacable/internet"
         }).success(function(data){
             console.log(data);
             $scope.datos=data;
@@ -230,7 +230,7 @@ angularRoutingApp.controller('banda_anchaController', function($scope, $http, $s
         $scope.html = $sce.trustAsHtml();
 
         }).error(function(data){
-            alert("Ha ocurrido un error al mostrar los datos");
+            console.log("Ha ocurrido un error al mostrar los datos");
     });
 });
 angularRoutingApp.controller('inalambricoController', function($scope) {
@@ -250,11 +250,11 @@ angularRoutingApp.controller('crazy_birdsController', function($scope) {
 angularRoutingApp.controller("ruta_promos", function ($scope, $http) {
     $http({
         method:"get",
-        url: "http://localhost/api_megacable/promociones"
+        url: "http://clientes.teknol.net/api_megacable/promociones"
         }).success(function(data){
             console.log(data);
             $scope.datos=data;
         }).error(function(data){
-            alert("Ha ocurrido un error al mostrar los datos");
+            console.log("Ha ocurrido un error al mostrar los datos");
     });
 })

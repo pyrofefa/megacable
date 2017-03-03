@@ -61,4 +61,8 @@ footer{
 .juegoDisplay{
     /*background-color: #424242;*/
 }
+body
+{
+    overflow-x: hidden;
+}
 
