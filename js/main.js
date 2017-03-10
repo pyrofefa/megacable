@@ -237,7 +237,12 @@ angularRoutingApp.controller('inalambricoController', function($scope) {
 });
 angularRoutingApp.controller('megacable_wifiController', function($scope) {
 });
-angularRoutingApp.controller('ruletaController', function($scope) {
+angularRoutingApp.controller('ruletaController', function($scope, $route) {
+     
+     $scope.load = function() 
+     {
+        window.onload();
+     }
 });
 /*angularRoutingApp.controller('dashController', function($scope) {
 });*/

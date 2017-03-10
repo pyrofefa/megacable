@@ -178,6 +178,12 @@ body{
 	background-color: #190707  !important;
 	color:#fff;
 }
+#contenido_ruleta
+{
+	background-color: #58ACFA;
+	width: 1080px;
+	height: 1100px;
+}
 /*#id_scroll{
 	overflow:scroll; 
 	overflow-x: hidden;
