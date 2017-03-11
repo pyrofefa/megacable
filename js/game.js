@@ -11,7 +11,7 @@ var canSpin;
 // slices (prizes) placed in the wheel
 var slices = 8;
 // prize names, starting from 12 o'clock going clockwise
-var slicePrizes = ["1", "2", "3", "4", "5", "6", "7", "8"];
+var slicePrizes = ["RECLAMA TU PREMIO", "PERDISTE", "RECLAMA TU PREMIO", "PERDISTE", "RECLAMA TU PREMIO", "PERDISTE", "RECLAMA TU PREMIO", "PERDISTE"];
 // the prize you are about to win
 var prize;
 // text field where to show the prize
@@ -197,32 +197,31 @@ playGame.prototype = {
             prize = slices - 1 - Math.floor(degrees / (360 / slices));
 
 
-            //console.log("Small: " + window.parent.configuracion.countSmall);
+            console.log("Small: " + window.parent.configuracion.countSmall);
 
             //console.log(premios);
-
-            //console.log(prize);
-            // now the wheel cannot spin because it's already spinning
-            canSpin = false;
-            // animation tweeen for the spin: duration 3s, will rotate by (360 * rounds + degrees) degrees
-            // the quadratic easing will simulate friction
-            var spinTween = game.add.tween(wheel).to({
-                angle: 360 * rounds + degrees
-            }, 6000, Phaser.Easing.Quadratic.Out, true);
-            
-            spinTween.onComplete.add(this.winPrize, this);
-            //console.log(slicePrizes[prize]);
-            // once the tween is completed, call winPrize function
-
-
 
             if (window.parent.configuracion.countSmall != 0) 
             {
 
+                //console.log(prize);
+                // now the wheel cannot spin because it's already spinning
+                canSpin = false;
+                // animation tweeen for the spin: duration 3s, will rotate by (360 * rounds + degrees) degrees
+                // the quadratic easing will simulate friction
+                var spinTween = game.add.tween(wheel).to({
+                    angle: 360 * rounds + degrees
+                }, 6000, Phaser.Easing.Quadratic.Out, true);
+            
+                spinTween.onComplete.add(this.winPrize, this);
+                //console.log(slicePrizes[prize]);
+                // once the tween is completed, call winPrize function
+
+
                 do {
 
                     // 1
-                    if (degrees >= 0 && degrees <= 45) {
+                    /*if (degrees >= 0 && degrees <= 45) {
                         token = hasPrime(0, 360, 0, 45);
                         if (token != -1) {
                             degrees = token;
@@ -292,7 +291,7 @@ playGame.prototype = {
                         if (token != -1) {
                             degrees = token;
                         }
-                    }
+                    }*/
                      
                      console.log("degrees = "+degrees);
                      console.log("Prizes = "+degrees);
@@ -309,11 +308,25 @@ playGame.prototype = {
 
     // function to assign the prize
     winPrize: function () {
-        // now we can spin the wheel again
-        canSpin = true;
-        // writing the prize you just won
-        prizeText.text = slicePrizes[prize];
-        
+          // now we can spin the wheel again
+          canSpin = true;
+          // writing the prize you just won
+          //prizeText.text = slicePrizes[prize];
+          // writing the prize you just won
+          prizeText.text = slicePrizes[prize];
+          console.log(slicePrizes[prize]);
+          if(slicePrizes[prize] == "RECLAMA TU PREMIO")
+          {
+               triunfo.play();
+               ganador();
+               window.parent.configuracion.countSmall--;
+               filesystem.writeFileSync('./configuracion.json', JSON.stringify(window.configuracion), 'utf8');
+          }
+          else
+          {
+               derrota.play();
+               perdedor();
+          }
         /*if(prize == 0){
           triunfo.play();
         }
@@ -340,7 +353,7 @@ function ganador()
      var btnw = document.createElement("div");
      btnw.className = "botonganador";
      document.body.appendChild(btnw);
-      $(".botonganador").show('slow');
+      $(".botonganador").show(3000,"swing");
 }
 function perdedor()
 {
@@ -364,9 +377,10 @@ function hasPrime(min, max, lessMin, lessMax) {
 
     var degrees;
     console.log("prize: "+prize);
-    //console.log(slicePrizes[prize]);
+    console.log(slicePrizes[prize]);
 
-    if (window.parent.configuracion.countSmall != 0 && (prize == 0  || prize == 2 || prize == 6 || prize == 7)) {
+    if (window.parent.configuracion.countSmall != 0 && slicePrizes[prize] == "RECLAMA TU PREMIO" ) 
+    {
         window.parent.configuracion.hass = true;
         window.parent.configuracion.countSmall--;
         filesystem.writeFileSync('./configuracion.json', JSON.stringify(window.configuracion), 'utf8');

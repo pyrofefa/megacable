@@ -184,6 +184,28 @@ body{
 	width: 1080px;
 	height: 1100px;
 }
+.botonganador{
+    background:url('../img/ganador.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 50%;
+    top: 85%;
+    width: 600px;
+    height: 100px;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+.botonperdedor{
+    background:url('../img/perdedor.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 50%;
+    top: 85%;
+    width: 600px;
+    height: 100px;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
 /*#id_scroll{
 	overflow:scroll; 
 	overflow-x: hidden;
