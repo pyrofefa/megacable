@@ -300,7 +300,15 @@ playGame.prototype = {
             }
             else
             {
-              alert("no hay premios");
+                //alert("no hay premios");
+                canSpin = false;
+                // animation tweeen for the spin: duration 3s, will rotate by (360 * rounds + degrees) degrees
+                // the quadratic easing will simulate friction
+                var spinTween = game.add.tween(wheel).to({
+                    angle: 360 * rounds + degrees
+                }, 6000, Phaser.Easing.Quadratic.Out, true);
+            
+                spinTween.onComplete.add(this.winPrizecero, this);
             }
             
         }
@@ -327,18 +335,6 @@ playGame.prototype = {
                derrota.play();
                perdedor();
           }
-        /*if(prize == 0){
-          triunfo.play();
-        }
-        else if(prize == 2){
-          triunfo.play();
-        }
-        else if(prize == 6){
-          triunfo.play();
-        }
-        else{
-          derrota.play();
-        }*/
         //console.log(prizeText.text);
          //$('#ganador').append('<h1>Ganaste un '+prizeText.text+' de descuento!</h1>');
         // $('#ganador').show();
@@ -346,7 +342,17 @@ playGame.prototype = {
         //window.parent.configuracion.premios--
         //filesystem.writeFileSync('./configuracion.json', JSON.stringify(window.configuracion), 'utf8');
         //triunfo.play();
-    }
+    },
+    winPrizecero: function () {
+          // now we can spin the wheel again
+          canSpin = true;
+          prizeText.text = slicePrizes[prize];
+          console.log(slicePrizes[prize]);
+          
+          derrota.play();
+          //perdedor();
+          
+    },
 };
 function ganador()
 {
