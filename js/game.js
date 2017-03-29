@@ -48,17 +48,14 @@ mesok[11] = "Diciembre";
 
 var tiempo = mesok[mm.getMonth()];
 //console.log(tiempo);
-
-
 window.onload = function() {	
      // creation of a 458x488 game
 	game = new Phaser.Game(900, 900, Phaser.AUTO, "juego");
-     // adding "PlayGame" state
-     game.state.add("PlayGame",playGame);
-     // launching "PlayGame" state
-     game.state.start("PlayGame");
+  // adding "PlayGame" state
+  game.state.add("PlayGame",playGame);
+  // launching "PlayGame" state
+  game.state.start("PlayGame");
 }
-
 var data = filesystem.readFileSync('./configuracion.json', 'utf8');
 window.configuracion = JSON.parse(data);
 	
@@ -74,7 +71,7 @@ window.configuracion = JSON.parse(data);
                 $.each(data, function(index, data)
                 {
                 	window.parent.configuracion.Premios = data.numero ;
-				})
+				        })
             },
             error: function (response) {
                 console.log("error");
@@ -166,91 +163,6 @@ playGame.prototype = {
                 spinTween.onComplete.add(this.winPrize, this);
                 //console.log(slicePrizes[prize]);
                 // once the tween is completed, call winPrize function
-
-
-                /*do {
-
-                    // 1
-                    if (degrees >= 0 && degrees <= 45) {
-                        token = hasPrime(0, 360, 0, 45);
-                        if (token != -1) {
-                            degrees = token;
-                        }
-                    }
-
-                    // 2
-                    if (degrees > 45 && degrees <= 90) {
-                        token = hasPrime(0, 360, 46, 91);
-
-                        if (token != -1) {
-                            degrees = token;
-                        }
-
-                    }
-
-                    // 3
-                    if (degrees > 90 && degrees <= 135) {
-                        token = hasPrime(0, 360, 92, 137);
-
-                        if (token != -1) {
-                            degrees = token;
-                        }
-                    }
-
-                    // 4
-                    if (degrees > 135 && degrees <= 180) {
-                        token = hasPrime(0, 360, 138, 183);
-
-                        if (token != -1) {
-                            degrees = token;
-                        }
-                    }
-
-                    // 5
-                    if (degrees > 180 && degrees <= 225) {
-                        token = hasPrime(0, 360, 184, 229);
-
-                        if (token != -1) {
-                            degrees = token;
-                        }
-                    }
-
-                    // 6
-                    if (degrees > 225 && degrees <= 270) {
-                        token = hasPrime(0, 360, 230, 275);
-
-                        if (token != -1) {
-                            degrees = token;
-                        }
-                    }
-
-                    // 7
-                    if (degrees > 270 && degrees <= 315) {
-                        //premio = true;
-                        token = hasPrime(0, 360, 276, 321);
-
-                        if (token != -1) {
-                            degrees = token;
-                        }
-                    }
-
-                    // 8
-                    if (degrees > 315 && degrees <= 360) {
-                        token = hasPrime(0, 360, 322, 360);
-
-                        if (token != -1) {
-                            degrees = token;
-                        }
-                    }
-                    else
-                    {
-
-                    }
-                     
-                     console.log("degrees = "+degrees);
-                     console.log("Prizes = "+degrees);
-                
-                } while (window.parent.configuracion.hass == false);*/
             }
             else
             {
@@ -284,13 +196,14 @@ playGame.prototype = {
                ganador();
                var enviar = window.parent.configuracion.Premios--;
                filesystem.writeFileSync('./configuracion.json', JSON.stringify(window.configuracion), 'utf8');
-                var datos = {'nombre' :  enviar};
-				$.ajax({
-        			url: "http://clientes.teknol.net/api_megacable/actualizarruleta/"+1,
-            		type: 'PUT',
-            		data: JSON.stringify(datos),
-            		dataType: 'json',
-			        contentType: "application/json; charset=utf-8",
+               var datos = {'nombre' :  enviar};
+				     
+             $.ajax({
+          			url: "http://clientes.teknol.net/api_megacable/actualizarruleta/"+1,
+              	type: 'PUT',
+              	data: JSON.stringify(datos),
+              	dataType: 'json',
+  			        contentType: "application/json; charset=utf-8",
             			success: function (data) {
 	                		console.log(data);
 	                	},
@@ -298,12 +211,11 @@ playGame.prototype = {
 	                		console.log("error");
 	                		//console.log(response);
 	            		},
-	      		});
+	      		 });
           }
           else
           {
                prizeText.text = slicePrizes[prize]; 
-
                derrota.play();
                perdedor();
           }
@@ -318,12 +230,27 @@ playGame.prototype = {
     winPrizecero: function () {
           // now we can spin the wheel again
           canSpin = true;
-
           prizeText.text = slicePrizes[prize];
           console.log(slicePrizes[prize]);
-          
           derrota.play();
           //perdedor();
+
+          var datos = {'nombre' :  0};
+          
+          $.ajax({
+                url: "http://clientes.teknol.net/api_megacable/actualizarruleta/"+1,
+                type: 'PUT',
+                data: JSON.stringify(datos),
+                dataType: 'json',
+                contentType: "application/json; charset=utf-8",
+                  success: function (data) {
+                      console.log(data);
+                    },
+                  error: function (response) {
+                      console.log("error");
+                      //console.log(response);
+                  },
+          });
           
     },
 };
@@ -334,12 +261,6 @@ function ganador()
      document.body.appendChild(btnw);
      $(".botonganador").show();
      $(".botonganador").fadeOut(30000);
-
-     /*$(".botonganador").show(function(){
-         setTimeout(function() {
-            $('.botonganador').hide();
-          }, 30000);
-     });*/
 }
 function perdedor()
 {
@@ -347,35 +268,6 @@ function perdedor()
      btnp.className = "botonperdedor";
      document.body.appendChild(btnp);
      $(".botonperdedor").show();
-}
-function randonexcluyerango(min, max, lessMin, lessMax) {
-    var res;
+     $(".botonperdedor").fadeOut(7000);
 
-    do {
-        res = (max - min + 1) * Math.random() + min;
-    } while (res >= lessMin && res <= lessMax);
-
-    return res;
-}
-function hasPrime(min, max, lessMin, lessMax) {
-
-    var degrees;
-    //console.log("prize: "+prize);
-    //console.log(slicePrizes[prize]);
-
-    if (window.parent.configuracion.countSmall != 0 && slicePrizes[prize] == "RECLAMA TU PREMIO" ) 
-    {
-        window.parent.configuracion.hass = true;
-        window.parent.configuracion.countSmall--;
-        filesystem.writeFileSync('./configuracion.json', JSON.stringify(window.configuracion), 'utf8');
-        degrees = -1;
-    } else {
-        window.parent.configuracion.hass = false;
-        degrees = randonexcluyerango(min, max, lessMin, lessMax);
-        prize = slices - 1 - Math.floor(degrees / (360 / slices));
-        filesystem.writeFileSync('./configuracion.json', JSON.stringify(window.configuracion), 'utf8');
-      
-    }
-
-    return degrees;
 }
