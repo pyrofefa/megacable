@@ -1,4 +1,3 @@
-
 var derrota = new Audio('sonidos/derrota.wav');
 var triunfo = new Audio('sonidos/triunfo.wav');
 
@@ -62,73 +61,32 @@ window.onload = function() {
 
 var data = filesystem.readFileSync('./configuracion.json', 'utf8');
 window.configuracion = JSON.parse(data);
-//console.log(data);
-if (tiempo == window.parent.configuracion.mes) {
-    //console.log("todo bien");
-}
-else if (tiempo == "Enero") {
-    window.parent.configuracion.mes = tiempo;
-    window.parent.configuracion.Premios = 10;
-    filesystem.writeFileSync('./configuracion.json', JSON.stringify(window.configuracion), 'utf8');
-}
-else if (tiempo == "Febrero") {
-    window.parent.configuracion.mes = tiempo;
-    window.parent.configuracion.Premios = 10;
-    filesystem.writeFileSync('./configuracion.json', JSON.stringify(window.configuracion), 'utf8');
-}
-else if (tiempo == "Marzo") {
-    window.parent.configuracion.mes = tiempo;
-    window.parent.configuracion.Premios = 10;
-    filesystem.writeFileSync('./configuracion.json', JSON.stringify(window.configuracion), 'utf8');
-}
-else if (tiempo == "Abril") {
-    window.parent.configuracion.mes = tiempo;
-    window.parent.configuracion.Premios = 10;
-    filesystem.writeFileSync('./configuracion.json', JSON.stringify(window.configuracion), 'utf8');
-}
-else if (tiempo == "Mayo") {
-    window.parent.configuracion.mes = tiempo;
-    window.parent.configuracion.Premios = 10;
-    filesystem.writeFileSync('./configuracion.json', JSON.stringify(window.configuracion), 'utf8');
-}
-else if (tiempo == "Junio") {
-    window.parent.configuracion.mes = tiempo;
-    window.parent.configuracion.Premios = 10;
-    filesystem.writeFileSync('./configuracion.json', JSON.stringify(window.configuracion), 'utf8');
-}
-else if (tiempo == "Julio") {
-    window.parent.configuracion.mes = tiempo;
-    window.parent.configuracion.Premios = 10;
-    filesystem.writeFileSync('./configuracion.json', JSON.stringify(window.configuracion), 'utf8');
-}
-else if (tiempo == "Agosto") {
-    window.parent.configuracion.mes = tiempo;
-    window.parent.configuracion.Premios = 10;
-    filesystem.writeFileSync('./configuracion.json', JSON.stringify(window.configuracion), 'utf8');
-}
-else if (tiempo == "Septiembre") {
-    window.parent.configuracion.mes = tiempo;
-    window.parent.configuracion.Premios = 10;
-    filesystem.writeFileSync('./configuracion.json', JSON.stringify(window.configuracion), 'utf8');
-}
-else if (tiempo == "Octubre") {
-    window.parent.configuracion.mes = tiempo;
-    window.parent.configuracion.Premios = 20;
-    filesystem.writeFileSync('./configuracion.json', JSON.stringify(window.configuracion), 'utf8');
-}
-else if (tiempo == "Noviembre") {
-    window.parent.configuracion.mes = tiempo;
-    window.parent.configuracion.Premios = 10;
-    filesystem.writeFileSync('./configuracion.json', JSON.stringify(window.configuracion), 'utf8');
-}
-else if (tiempo == "Diciembre") {
-    window.parent.configuracion.mes = tiempo;
-    window.parent.configuracion.countSmall = 10;
-    filesystem.writeFileSync('./configuracion.json', JSON.stringify(window.configuracion), 'utf8');
-}
+	
+	$.ajax({
+        //url: "http://agua.dev/comerciales/mostrar",
+        url: "http://clientes.teknol.net/api_megacable/ruleta",
+        data: "{}",
+        dataType: "json",
+        type: "GET",
+        contentType: "application/json; charset=utf-8",
+            success: function (data) {
+               console.log(data);
+                $.each(data, function(index, data)
+                {
+                	window.parent.configuracion.Premios = data.numero ;
+				})
+            },
+            error: function (response) {
+                console.log("error");
+                //console.log(response);
+            },
+            failure: function (response) {
+                console.log("failure");
+                //console.log(response);
+            }
+    });
 
-
-
+//window.parent.configuracion.Premios = ;
 // PLAYGAME STATE
 	
 var playGame = function(game){};
@@ -189,7 +147,7 @@ playGame.prototype = {
             prize = slices - 1 - Math.floor(degrees / (360 / slices));
 
 
-            console.log("Premios: " + window.parent.configuracion.Premios);
+           console.log("Premios: " + window.parent.configuracion.Premios);
 
             //console.log(premios);
 
@@ -318,14 +276,29 @@ playGame.prototype = {
           //prizeText.text = slicePrizes[prize];
           // writing the prize you just won
           prizeText.text = slicePrizes[prize];
-          console.log(slicePrizes[prize]);
+          //console.log(slicePrizes[prize]);
           if(slicePrizes[prize] == "RECLAMA TU PREMIO")
           {
                prizeText.text = slicePrizes[prize]; 
                triunfo.play();
                ganador();
-               window.parent.configuracion.Premios--;
+               var enviar = window.parent.configuracion.Premios--;
                filesystem.writeFileSync('./configuracion.json', JSON.stringify(window.configuracion), 'utf8');
+                var datos = {'nombre' :  enviar};
+				$.ajax({
+        			url: "http://clientes.teknol.net/api_megacable/actualizarruleta/"+1,
+            		type: 'PUT',
+            		data: JSON.stringify(datos),
+            		dataType: 'json',
+			        contentType: "application/json; charset=utf-8",
+            			success: function (data) {
+	                		console.log(data);
+	                	},
+	            		error: function (response) {
+	                		console.log("error");
+	                		//console.log(response);
+	            		},
+	      		});
           }
           else
           {
@@ -360,9 +333,8 @@ function ganador()
      btnw.className = "botonganador";
      document.body.appendChild(btnw);
      $(".botonganador").show();
-     $(".botonganador").hide(30000,"fast");
+     $(".botonganador").fadeOut(30000);
 
-     
      /*$(".botonganador").show(function(){
          setTimeout(function() {
             $('.botonganador').hide();
