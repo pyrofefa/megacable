@@ -68,74 +68,62 @@ if (tiempo == window.parent.configuracion.mes) {
 }
 else if (tiempo == "Enero") {
     window.parent.configuracion.mes = tiempo;
-    window.parent.configuracion.countSmall = 10;
-    window.parent.configuracion.bimestre = 1;
+    window.parent.configuracion.Premios = 10;
     filesystem.writeFileSync('./configuracion.json', JSON.stringify(window.configuracion), 'utf8');
 }
 else if (tiempo == "Febrero") {
     window.parent.configuracion.mes = tiempo;
-    window.parent.configuracion.countSmall = 10;
-    window.parent.configuracion.bimestre = 1;
+    window.parent.configuracion.Premios = 10;
     filesystem.writeFileSync('./configuracion.json', JSON.stringify(window.configuracion), 'utf8');
 }
 else if (tiempo == "Marzo") {
     window.parent.configuracion.mes = tiempo;
-    window.parent.configuracion.countSmall = 10;
-    window.parent.configuracion.bimestre = 2;
+    window.parent.configuracion.Premios = 10;
     filesystem.writeFileSync('./configuracion.json', JSON.stringify(window.configuracion), 'utf8');
 }
 else if (tiempo == "Abril") {
     window.parent.configuracion.mes = tiempo;
-    window.parent.configuracion.countSmall = 10;
-    window.parent.configuracion.bimestre = 2;
+    window.parent.configuracion.Premios = 10;
     filesystem.writeFileSync('./configuracion.json', JSON.stringify(window.configuracion), 'utf8');
 }
 else if (tiempo == "Mayo") {
     window.parent.configuracion.mes = tiempo;
-    window.parent.configuracion.countSmall = 10;
-    window.parent.configuracion.bimestre = 3;
+    window.parent.configuracion.Premios = 10;
     filesystem.writeFileSync('./configuracion.json', JSON.stringify(window.configuracion), 'utf8');
 }
 else if (tiempo == "Junio") {
     window.parent.configuracion.mes = tiempo;
-    window.parent.configuracion.countSmall = 10;
-    window.parent.configuracion.bimestre = 3;
+    window.parent.configuracion.Premios = 10;
     filesystem.writeFileSync('./configuracion.json', JSON.stringify(window.configuracion), 'utf8');
 }
 else if (tiempo == "Julio") {
     window.parent.configuracion.mes = tiempo;
-    window.parent.configuracion.countSmall = 10;
-    window.parent.configuracion.bimestre = 4;
+    window.parent.configuracion.Premios = 10;
     filesystem.writeFileSync('./configuracion.json', JSON.stringify(window.configuracion), 'utf8');
 }
 else if (tiempo == "Agosto") {
     window.parent.configuracion.mes = tiempo;
-    window.parent.configuracion.countSmall = 10;
-    window.parent.configuracion.bimestre = 4;
+    window.parent.configuracion.Premios = 10;
     filesystem.writeFileSync('./configuracion.json', JSON.stringify(window.configuracion), 'utf8');
 }
 else if (tiempo == "Septiembre") {
     window.parent.configuracion.mes = tiempo;
-    window.parent.configuracion.countSmall = 10;
-    window.parent.configuracion.bimestre = 5;
+    window.parent.configuracion.Premios = 10;
     filesystem.writeFileSync('./configuracion.json', JSON.stringify(window.configuracion), 'utf8');
 }
 else if (tiempo == "Octubre") {
     window.parent.configuracion.mes = tiempo;
-    window.parent.configuracion.countSmall = 20;
-    window.parent.configuracion.bimestre = 5;
+    window.parent.configuracion.Premios = 20;
     filesystem.writeFileSync('./configuracion.json', JSON.stringify(window.configuracion), 'utf8');
 }
 else if (tiempo == "Noviembre") {
     window.parent.configuracion.mes = tiempo;
-    window.parent.configuracion.countSmall = 10;
-    window.parent.configuracion.bimestre = 6;
+    window.parent.configuracion.Premios = 10;
     filesystem.writeFileSync('./configuracion.json', JSON.stringify(window.configuracion), 'utf8');
 }
 else if (tiempo == "Diciembre") {
     window.parent.configuracion.mes = tiempo;
     window.parent.configuracion.countSmall = 10;
-    window.parent.configuracion.bimestre = 6;
     filesystem.writeFileSync('./configuracion.json', JSON.stringify(window.configuracion), 'utf8');
 }
 
@@ -182,7 +170,11 @@ playGame.prototype = {
      // function to spin the wheel
     spin: function () {
         // can we spin the wheel?
-        $('#ganador').empty();
+        //$('#ganador').empty();
+        $(".botonganador").hide();
+        $(".botonperdedor").hide();
+
+
         if (canSpin > 0) 
         {
             // resetting text field
@@ -197,11 +189,11 @@ playGame.prototype = {
             prize = slices - 1 - Math.floor(degrees / (360 / slices));
 
 
-            console.log("Small: " + window.parent.configuracion.countSmall);
+            console.log("Premios: " + window.parent.configuracion.Premios);
 
             //console.log(premios);
 
-            if (window.parent.configuracion.countSmall != 0) 
+            if (window.parent.configuracion.Premios != 0) 
             {
 
                 //console.log(prize);
@@ -218,10 +210,10 @@ playGame.prototype = {
                 // once the tween is completed, call winPrize function
 
 
-                do {
+                /*do {
 
                     // 1
-                    /*if (degrees >= 0 && degrees <= 45) {
+                    if (degrees >= 0 && degrees <= 45) {
                         token = hasPrime(0, 360, 0, 45);
                         if (token != -1) {
                             degrees = token;
@@ -291,12 +283,16 @@ playGame.prototype = {
                         if (token != -1) {
                             degrees = token;
                         }
-                    }*/
+                    }
+                    else
+                    {
+
+                    }
                      
                      console.log("degrees = "+degrees);
                      console.log("Prizes = "+degrees);
                 
-                } while (window.parent.configuracion.hass == false);
+                } while (window.parent.configuracion.hass == false);*/
             }
             else
             {
@@ -325,13 +321,16 @@ playGame.prototype = {
           console.log(slicePrizes[prize]);
           if(slicePrizes[prize] == "RECLAMA TU PREMIO")
           {
+               prizeText.text = slicePrizes[prize]; 
                triunfo.play();
                ganador();
-               window.parent.configuracion.countSmall--;
+               window.parent.configuracion.Premios--;
                filesystem.writeFileSync('./configuracion.json', JSON.stringify(window.configuracion), 'utf8');
           }
           else
           {
+               prizeText.text = slicePrizes[prize]; 
+
                derrota.play();
                perdedor();
           }
@@ -346,6 +345,7 @@ playGame.prototype = {
     winPrizecero: function () {
           // now we can spin the wheel again
           canSpin = true;
+
           prizeText.text = slicePrizes[prize];
           console.log(slicePrizes[prize]);
           
@@ -359,17 +359,23 @@ function ganador()
      var btnw = document.createElement("div");
      btnw.className = "botonganador";
      document.body.appendChild(btnw);
-      $(".botonganador").show(3000,"swing");
+     $(".botonganador").show();
+     $(".botonganador").hide(30000,"fast");
+
+     
+     /*$(".botonganador").show(function(){
+         setTimeout(function() {
+            $('.botonganador').hide();
+          }, 30000);
+     });*/
 }
 function perdedor()
 {
      var btnp = document.createElement("div");
      btnp.className = "botonperdedor";
      document.body.appendChild(btnp);
-     $(".botonperdedor").show(3000,"swing");
+     $(".botonperdedor").show();
 }
-
-
 function randonexcluyerango(min, max, lessMin, lessMax) {
     var res;
 
@@ -382,8 +388,8 @@ function randonexcluyerango(min, max, lessMin, lessMax) {
 function hasPrime(min, max, lessMin, lessMax) {
 
     var degrees;
-    console.log("prize: "+prize);
-    console.log(slicePrizes[prize]);
+    //console.log("prize: "+prize);
+    //console.log(slicePrizes[prize]);
 
     if (window.parent.configuracion.countSmall != 0 && slicePrizes[prize] == "RECLAMA TU PREMIO" ) 
     {
