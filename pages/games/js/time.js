@@ -20,7 +20,7 @@ function timerIncrement()
   //console.log(flag);
   //console.log("noActivity: "+noActivity);
   
-    if (noActivity > 100)
+    if (noActivity > 60)
     {
       noActivity = 0; 
       window.location = 'javascript:history.back()';

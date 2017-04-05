@@ -61,7 +61,7 @@ window.configuracion = JSON.parse(data);
 	
 	$.ajax({
         //url: "http://agua.dev/comerciales/mostrar",
-        url: "http://clientes.teknol.net/api_megacable/ruleta",
+        url: "http://clientes.teknol.net/api_megacable_culiacan/ruleta",
         data: "{}",
         dataType: "json",
         type: "GET",
@@ -199,7 +199,7 @@ playGame.prototype = {
                var datos = {'nombre' :  enviar};
 				     
              $.ajax({
-          			url: "http://clientes.teknol.net/api_megacable/actualizarruleta/"+1,
+          			url: "http://clientes.teknol.net/api_megacable_culiacan/actualizarruleta/"+1,
               	type: 'PUT',
               	data: JSON.stringify(datos),
               	dataType: 'json',
@@ -238,7 +238,7 @@ playGame.prototype = {
           var datos = {'nombre' :  0};
           
           $.ajax({
-                url: "http://clientes.teknol.net/api_megacable/actualizarruleta/"+1,
+                url: "http://clientes.teknol.net/api_megacable_culiacan/actualizarruleta/"+1,
                 type: 'PUT',
                 data: JSON.stringify(datos),
                 dataType: 'json',

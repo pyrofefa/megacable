@@ -5,7 +5,7 @@ var app = angular.module("app", ["ngResource"]);
 //con dataResource inyectamos la factoría
 app.controller("ruta", function ($scope, $http, dataResource) {
     //hacemos uso de $http para obtener los datos del json
-    $http.get('http://localhost/api_megacable/listaimagenes').success(function (data) {
+    $http.get('http://clientes.teknol.net/api_megacable_culiacanlistaimagenes').success(function (data) {
         //Convert data to array.
         //datos lo tenemos disponible en la vista gracias a $scope
         $scope.datos = data;
@@ -16,7 +16,7 @@ app.controller("ruta", function ($scope, $http, dataResource) {
 
 //de esta forma tan sencilla consumimos con $resource en AngularJS
 app.factory("dataResource", function ($resource) {
-    return $resource("http://localhost/api_megacable/listaimagenes", //la url donde queremos consumir
+    return $resource("http://clientes.teknol.net/api_megacable_culiacanlistaimagenes", //la url donde queremos consumir
         {}, //aquí podemos pasar variables que queramos pasar a la consulta
         //a la función get le decimos el método, y, si es un array lo que devuelve
         //ponemos isArray en true
@@ -27,7 +27,7 @@ app.factory("dataResource", function ($resource) {
 /*Banner Footer*/
 app.controller("ruta_footer", function ($scope, $http, dataResource) {
     //hacemos uso de $http para obtener los datos del json
-    $http.get('http://localhost/api_megacable/listaimagenesfooter').success(function (data) {
+    $http.get('http://clientes.teknol.net/api_megacable_culiacanlistaimagenesfooter').success(function (data) {
         //Convert data to array.
         //datos lo tenemos disponible en la vista gracias a $scope
         $scope.datos = data;
@@ -37,7 +37,7 @@ app.controller("ruta_footer", function ($scope, $http, dataResource) {
 })
 //de esta forma tan sencilla consumimos con $resource en AngularJS
 app.factory("dataResource", function ($resource) {
-    return $resource("http://localhost/api_megacable/listaimagenesfooter", //la url donde queremos consumir
+    return $resource("http://clientes.teknol.net/api_megacable_culiacanlistaimagenesfooter", //la url donde queremos consumir
         {}, //aquí podemos pasar variables que queramos pasar a la consulta
         //a la función get le decimos el método, y, si es un array lo que devuelve
         //ponemos isArray en true
