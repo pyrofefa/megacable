@@ -128,7 +128,7 @@ angularRoutingApp.controller('paqueteunoController', function($scope, $http)
 {
     $http({
         method:"get",
-        url: "http://clientes.teknol.net/api_megacable_culiacan/paquete_uno"
+        url: "http://clientes.teknol.net/api_megacable/paquete_uno"
         }).success(function(data){
             console.log(data);
             $scope.datos=data;
@@ -140,7 +140,7 @@ angularRoutingApp.controller('paquetedosinternetController', function($scope, $h
 {
     $http({
         method:"get",
-        url: "http://clientes.teknol.net/api_megacable_culiacan/paquete_dos_internet"
+        url: "http://clientes.teknol.net/api_megacable/paquete_dos_internet"
         }).success(function(data){
             console.log(data);
             $scope.datos=data;
@@ -152,7 +152,7 @@ angularRoutingApp.controller('paquetedostelefoniatController', function($scope, 
 {
     $http({
         method:"get",
-        url: "http://clientes.teknol.net/api_megacable_culiacan/paquete_dos_telefonia"
+        url: "http://clientes.teknol.net/api_megacable/paquete_dos_telefonia"
         }).success(function(data){
             console.log(data);
             $scope.datos=data;
@@ -164,7 +164,7 @@ angularRoutingApp.controller('paquetetresController', function($scope, $http)
 {
     $http({
         method:"get",
-        url: "http://clientes.teknol.net/api_megacable_culiacan/paquete_tres"
+        url: "http://clientes.teknol.net/api_megacable/paquete_tres"
         }).success(function(data){
             console.log(data);
             $scope.datos=data;
@@ -187,7 +187,7 @@ angularRoutingApp.controller('television_cableController', function($scope, $htt
 {
     $http({
         method:"get",
-        url: "http://clientes.teknol.net/api_megacable_culiacan/television_cable"
+        url: "http://clientes.teknol.net/api_megacable/television_cable"
         }).success(function(data){
             console.log(data);
             $scope.datos=data;
@@ -222,7 +222,7 @@ angularRoutingApp.controller('banda_anchaController', function($scope, $http, $s
 {
     $http({
         method:"get",
-        url: "http://clientes.teknol.net/api_megacable_culiacan/internet"
+        url: "http://clientes.teknol.net/api_megacable/internet"
         }).success(function(data){
             console.log(data);
             $scope.datos=data;
@@ -255,7 +255,7 @@ angularRoutingApp.controller('crazy_birdsController', function($scope) {
 angularRoutingApp.controller("ruta_promos", function ($scope, $http) {
     $http({
         method:"get",
-        url: "http://clientes.teknol.net/api_megacable_culiacan/promociones"
+        url: "http://clientes.teknol.net/api_megacable/promociones"
         }).success(function(data){
             console.log(data);
             $scope.datos=data;

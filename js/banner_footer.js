@@ -15,7 +15,7 @@ $(document).ready(function()
 					if (data.tipo=="video") 
                 	{
                 		//$("#consumi").append("<li class='item video'> <video id='mi-video"+data.id+"'controls> <source src='http://agua.dev/comercial/"+data.ruta+"'> </video> </li>");
-                		$("#consumifooter").append("<li class='item videof'> <video id='mi-videof"+data.id+"' > <source src='http://clientes.teknol.net/api_megacable/imagenes/banner_footer/"+data.ruta+"'> </video> </li>");
+                		$("#consumifooter").append("<li class='item videof'> <video id='mi-videof"+data.id+"' muted> <source src='http://clientes.teknol.net/api_megacable/imagenes/banner_footer/"+data.ruta+"'> </video> </li>");
                 		//$("#myCarousel").carousel('pause');
                 	}
                 	else if(data.tipo=="imagen")
